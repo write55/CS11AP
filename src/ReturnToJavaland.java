@@ -67,7 +67,7 @@ public class ReturnToJavaland {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String input = in.readLine();
 		// System.out.println("You entered " + input + " For your income");
-		this.setIncome(new Integer(input));
+		setIncome(new Integer(input));
 	}
 
 	/*
