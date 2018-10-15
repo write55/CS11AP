@@ -77,7 +77,7 @@ public class ReturnToJavaland {
      * calculates tax with applyTax() then prints the answer
      */
     public static void main(String[] args) throws IOException {
-        Javaland income = new Javaland(Javaland.getInput());
+        ReturnToJavaland income = new ReturnToJavaland(ReturnToJavaland.getInput());
         double tax = income.applyTax();
         System.out.println(income.toString());
         System.out.println("Tax is " + tax);
