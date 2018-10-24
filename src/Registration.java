@@ -284,7 +284,7 @@ public class Registration {
 // Painting: 0
 // Sculpture: 9
 // Weaving: 5
-////
+//
 // Section Counts:
 // Batik Sections: 0
 // Calligraphy Sections: 2
