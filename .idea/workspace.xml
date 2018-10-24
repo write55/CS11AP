@@ -20,9 +20,9 @@
     <session id="1118950006">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="6" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.14" value="3" />
           <entry key="project.open.time.15" value="1" />
@@ -36,7 +36,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,14 +56,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="2077" />
-          <entry key="txt" value="152" />
+          <entry key="java" value="3057" />
+          <entry key="txt" value="174" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2077" />
-          <entry key="PLAIN_TEXT" value="153" />
+          <entry key="JAVA" value="3057" />
+          <entry key="PLAIN_TEXT" value="175" />
         </counts>
       </usages-collector>
     </session>
@@ -76,14 +76,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Registration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+            <state relative-caret-position="2096">
+              <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
               <folding>
-                <element signature="e#0#2280#0" expanded="true" />
-                <element signature="imports" expanded="true" />
                 <element signature="method#Registration#0;class#Registration#0" />
-                <element signature="e#3222#3223#0" expanded="true" />
-                <element signature="e#3249#3250#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -390,6 +386,7 @@
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -413,12 +410,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540251123138" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540344756529" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -445,7 +442,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Rectangle.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Registration.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -660,14 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540052384653</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Started Registration">
+      <created>1540251143944</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540251143944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49951598" visible="true" weight="0.17871094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49951598" visible="true" weight="0.17871094" />
       <window_info id="Structure" order="1" sideWeight="0.50048405" side_tool="true" weight="0.17482518" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -681,10 +684,10 @@
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.32913843" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3276515" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3285985" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004883" side_tool="true" weight="0.3285985" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49951172" weight="0.3285985" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.3285985" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.29545453" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.29525653" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24975026" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -730,7 +733,8 @@
     <MESSAGE value="Fixed Return to Javaland" />
     <MESSAGE value="Started Art Registration Program" />
     <MESSAGE value="asdfjkl;asdfjkl;" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdfjkl;asdfjkl;" />
+    <MESSAGE value="Started Registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Registration" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -832,14 +836,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Registration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+        <state relative-caret-position="2096">
+          <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
           <folding>
-            <element signature="e#0#2280#0" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="method#Registration#0;class#Registration#0" />
-            <element signature="e#3222#3223#0" expanded="true" />
-            <element signature="e#3249#3250#0" expanded="true" />
           </folding>
         </state>
       </provider>
