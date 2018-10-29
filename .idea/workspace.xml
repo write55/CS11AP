@@ -49,28 +49,28 @@
           <entry key="class" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="44" />
+          <entry key="java" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="57" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="3165" />
-          <entry key="txt" value="234" />
+          <entry key="java" value="3895" />
+          <entry key="txt" value="257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3165" />
-          <entry key="PLAIN_TEXT" value="235" />
+          <entry key="JAVA" value="3895" />
+          <entry key="PLAIN_TEXT" value="258" />
         </counts>
       </usages-collector>
     </session>
@@ -79,15 +79,14 @@
     <favorites_list name="CompSci Stuff" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="59" column="71" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="71" />
+            <state relative-caret-position="92">
+              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
               <folding>
-                <element signature="method#Home#0;class#Home#0" />
-                <element signature="method#inputMoney#0;class#Home#0" />
+                <element signature="e#0#3160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,7 +129,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1750" />
@@ -438,7 +437,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540839301222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540850353594" />
+    <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -463,9 +463,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Registration">
-    <configuration name="Javaland" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Javaland" />
+  <component name="RunManager" selected="Application.Home">
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Home" />
       <module name="CompSci Stuff" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -501,18 +501,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.WaterBill" />
-      <item itemvalue="Application.Javaland" />
       <item itemvalue="Application.ReturnToJavaland" />
       <item itemvalue="Application.Rectangle" />
       <item itemvalue="Application.Registration" />
+      <item itemvalue="Application.Home" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Registration" />
         <item itemvalue="Application.Rectangle" />
         <item itemvalue="Application.ReturnToJavaland" />
         <item itemvalue="Application.WaterBill" />
-        <item itemvalue="Application.Javaland" />
       </list>
     </recent_temporary>
   </component>
@@ -583,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540344830076</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Re-formatted Home.java">
+      <created>1540848369042</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1540848369042</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49951598" visible="true" weight="0.17871094" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49951598" visible="true" weight="0.17871094" />
       <window_info id="Structure" order="1" sideWeight="0.50048405" side_tool="true" weight="0.17482518" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -606,8 +613,8 @@
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.32821497" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004883" side_tool="true" weight="0.3285985" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49951172" weight="0.32821497" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3285985" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.29525653" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32821497" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.29319853" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24975026" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -617,6 +624,34 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.26073927" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49951598" visible="true" weight="0.17871094" />
+      <window_info id="Structure" order="1" sideWeight="0.50048405" side_tool="true" weight="0.17482518" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50048405" side_tool="true" weight="0.17482518" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39962122" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32821497" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004883" side_tool="true" weight="0.3285985" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49951172" weight="0.32821497" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32821497" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.29427084" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24975026" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.26073927" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -665,7 +700,8 @@
     <MESSAGE value="asdfjkl;asdfjkl;" />
     <MESSAGE value="Started Registration" />
     <MESSAGE value="First version of getSections method finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="First version of getSections method finished" />
+    <MESSAGE value="Re-formatted Home.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-formatted Home.java" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -777,11 +813,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="59" column="71" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="71" />
+        <state relative-caret-position="92">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <element signature="method#Home#0;class#Home#0" />
-            <element signature="method#inputMoney#0;class#Home#0" />
+            <element signature="e#0#3160#0" expanded="true" />
           </folding>
         </state>
       </provider>
