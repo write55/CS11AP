@@ -91,11 +91,17 @@ public class Home {
                 + this.floors + "\nStyle: " + style;
     }
 
+    // Method to prompt user to change a private data value
+    public void changeData() {
+        System.out.print("Would you like to change any values? (Y/N)");
+    }
+
     public static void main(String[] args) throws IOException {
         Home house = new Home();
         house.inputValuesRunner();
         house.inputStyle();
         System.out.println("\n" + house.toString());
+
 
     }
 
