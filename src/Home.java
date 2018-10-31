@@ -154,13 +154,9 @@ public class Home {
                 + this.width + "\nFloors: " + this.floors + "\nStyle: " + style;
     }
 
-    public static char sentinelCheck() throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        return in.readLine().charAt(0);
-    }
-
     public static void main(String[] args) throws IOException {
         Home house = new Home();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int counter = 1;
         char sentinel = 'Y';
         System.out.println("All numeric values entered should be positive integers");
@@ -178,7 +174,7 @@ public class Home {
             }
             System.out.println("Program complete. Go build your house, user " + counter + ".");
             System.out.println("Would you like to start another house? (Y/N)");
-            sentinel = sentinelCheck();
+            sentinel = in.readLine().charAt(0);
         }
     }
 }
