@@ -31,7 +31,6 @@ public class Home {
     }
 
     // INPUT METHODS
-
     /*
      * General method for l/w/f and money, checks for positive integer, no error
      * trap for integer since it'll crash the program if you enter a decimal so
@@ -69,7 +68,6 @@ public class Home {
     }
 
     // METHODS TO CHANGE PRIVATE DATA
-
     // This method will never show up in main, runs as part changeData
     // Allows user to choose a private variable to change
     public void changeValues() throws IOException {
@@ -113,7 +111,6 @@ public class Home {
     }
 
     // CALCULATIONS/UTILITY (toString, etc)
-
     // Calculates the cost of a house from a "house" object's style
     public int calculateCost() {
         int cost = 0;
