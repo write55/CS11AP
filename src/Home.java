@@ -151,13 +151,15 @@ public class Home {
                 + this.width + "\nFloors: " + this.floors + "\nStyle: " + style;
     }
 
+    // Doesn't recalculate cost each time - check that again and fix it - 23:14 me good luck and try not to slack off too much
     public static void main(String[] args) throws IOException {
         Home house = new Home();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        int counter = 1;
+        int counter = 0;
         char sentinel = 'Y';
         System.out.println("All numeric values entered should be positive integers");
         while (sentinel != 'N') {
+            counter ++;
             System.out.println("User " + counter + " has started their house");
             house.runInputValues();
             house.inputStyle();
