@@ -93,16 +93,13 @@ public class Home {
     }
 
     // Method to prompt user to change a private data value
-    public int changeData(int cost) throws IOException {
+    public char changeData(int cost) throws IOException {
         char query;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Your budget isn't enough to cover costs.");
-        System.out.println("Would you like to change your house's dimensions or style?");
-        System.out.print("Y/N or enter 0 to end the program here: ");
+        System.out.println("Would you like to change your house's dimensions or style? (Y/N)");
         query = Character.toUpperCase(in.readLine().charAt(0));
         while (query == 'Y') {
             this.changeValues();
-            cost = this.calculateCost();
             System.out.println("\nNew " + this.toString());
             if (cost > this.budget) {
                 System.out.println("Your budget is not enough, you need " + cost);
@@ -155,8 +152,7 @@ public class Home {
                 + this.width + "\nFloors: " + this.floors + "\nStyle: " + style;
     }
 
-    // budget being greater than cost isn't sentinel - change it so a single no
-    // on changes ends it every time
+    // TODO remove while sentinel from here and make it into one method
     public static void main(String[] args) throws IOException {
         Home house = new Home();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -171,9 +167,10 @@ public class Home {
             System.out.println("\n" + house.toString() + "\n");
             int cost = house.calculateCost();
             System.out.println("The cost of your house is: " + cost);
-
-            while (cost > house.budget) {
-                cost = house.changeData(cost);
+            char costSentinel = house.changeData(cost);
+            while (costSentinel != 'N') {
+                cost = house.calculateCost();
+                costSentinel = house.changeData(cost);
             }
             System.out.println("Program complete.");
             System.out.println("Would you like to start another house? (Y/N)");
