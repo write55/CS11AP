@@ -155,12 +155,12 @@ public class Home {
     public static void main(String[] args) throws IOException {
         Home house = new Home();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        int userCounter = 0;
+        int houseCounter = 0;
         char userLoopCheck = 'Y';
         System.out.println("All numeric values entered should be positive integers");
         while (userLoopCheck == 'Y') {
-            userCounter++;
-            System.out.println("User " + userCounter + " has started their house");
+            houseCounter++;
+            System.out.println("Program starting for house no. " + houseCounter);
             house.runInputValues();
             house.inputStyle();
             System.out.println("\n" + "Information for your house:" + house.toString());
@@ -176,6 +176,6 @@ public class Home {
             System.out.println("Would you like to start another house? (Y/N)");
             userLoopCheck = in.readLine().charAt(0);
         }
-        System.out.println("Houses finished, program terminating.");
+        System.out.println("Program terminating.");
     }
 }
