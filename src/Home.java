@@ -2,8 +2,8 @@
 /*
 Aaron Wu
 10/29/18
-Program to do something with house values and stuff - change this later
-https://stackoverflow.com/questions/31752352/eclipses-outline-window-equivalent-in-intellij
+Program creates a House object and allows the user to input values for budget, l/w/h, style, and calculates cost from those.
+Also allows user to change values for any given private variable until a sentinel is entered, then prompts for a new user.
 */
 
 import java.io.BufferedReader;
@@ -32,9 +32,8 @@ public class Home {
 
     // INPUT METHODS
     /*
-     * General method for l/w/f and money, checks for positive integer, no error
-     * trap for integer since it'll crash the program if you enter a decimal so
-     * it's not needed (no NumberFormatException)
+     General method for l/w/f and money, checks for positive integer, no error
+     trap for integer since it'll crash the program if you enter a decimal
      */
     public static int inputValue(String variable) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -59,25 +58,25 @@ public class Home {
     public void inputStyle() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter your house's style code: ");
-        char c = Character.toUpperCase(in.readLine().charAt(0));
+        char c = in.readLine().toUpperCase().charAt(0);
         while (c != 'M' && c != 'S' && c != 'E' && c != 'C') {
             System.out.print("Doesn't match any available styles\nTry Again: ");
-            c = Character.toUpperCase(in.readLine().charAt(0));
+            c = in.readLine().toUpperCase().charAt(0);
         }
         this.style = c;
     }
 
     // METHODS TO WORK WITH PRIVATE DATA
-    // This method will never show up in main, runs as part changeData
-    // Allows user to choose a private variable to change
+    // This method will never show up in main, runs as part changeDataLoop
+    // Prompts user to choose a private variable to change
     public void changeValues() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Which value would you like to change?");
         System.out.print("Enter the first letter: ");
-        char change = Character.toUpperCase(in.readLine().charAt(0));
+        char change = in.readLine().toUpperCase().charAt(0);
         while (change != 'B' && change != 'L' && change != 'W' && change != 'F' && change != 'S') {
             System.out.print("Letter doesn't match any private data values\nTry Again: ");
-            change = Character.toUpperCase(in.readLine().charAt(0));
+            change = in.readLine().toUpperCase().charAt(0);
         }
         if (change == 'B') {
             this.budget = inputValue("new budget");
@@ -92,24 +91,25 @@ public class Home {
         }
     }
 
-    // Method to prompt user to change a private data value
-    public char changeData(int cost) throws IOException {
-        char query;
+    // Method to prompt user to change a private data value, calls changeValues
+    public void changeDataLoop() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Would you like to change your house's dimensions or style? (Y/N)");
-        query = Character.toUpperCase(in.readLine().charAt(0));
-        while (query == 'Y') {
+        System.out.println("Would you like to change any values? (Y/N)");
+        char query = in.readLine().toUpperCase().charAt(0);
+        int cost;
+        while (query != 'N') {
             this.changeValues();
-            System.out.println("\nNew " + this.toString());
+            cost = this.calculateCost();
+            System.out.println("\nNew information for your house: " + this.toString());
+            System.out.println("\nThe cost of your house is: " + cost);
             if (cost > this.budget) {
-                System.out.println("Your budget is not enough, you need " + cost);
+                System.out.println("Budget is not enough.");
             } else {
                 System.out.println("Budget is enough.");
             }
-            System.out.println("\nWould you like to change any others? (Y/N)");
-            query = Character.toUpperCase(in.readLine().charAt(0));
+            System.out.println("Would you like to change any other values? (Y/N)");
+            query = in.readLine().toUpperCase().charAt(0);
         }
-        return query;
     }
 
     // CALCULATIONS/UTILITY (toString, etc)
@@ -148,11 +148,10 @@ public class Home {
     // Converts private data to string
     public String toString() {
         String style = convertStyle(this.style);
-        return "Information for your house:\nBudget: " + this.budget + "\nLength: " + this.length + "\nWidth: "
+        return "\nBudget: " + this.budget + "\nLength: " + this.length + "\nWidth: "
                 + this.width + "\nFloors: " + this.floors + "\nStyle: " + style;
     }
 
-    // TODO remove while sentinel from here and make it into one method
     public static void main(String[] args) throws IOException {
         Home house = new Home();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -164,14 +163,15 @@ public class Home {
             System.out.println("User " + userCounter + " has started their house");
             house.runInputValues();
             house.inputStyle();
-            System.out.println("\n" + house.toString() + "\n");
+            System.out.println("\n" + "Information for your house:" + house.toString());
             int cost = house.calculateCost();
-            System.out.println("The cost of your house is: " + cost);
-            char costSentinel = house.changeData(cost);
-            while (costSentinel != 'N') {
-                cost = house.calculateCost();
-                costSentinel = house.changeData(cost);
+            System.out.println("\nThe cost of your house is: " + cost);
+            if (cost > house.budget) {
+                System.out.println("Budget is not enough.");
+            } else {
+                System.out.println("Budget is enough.");
             }
+            house.changeDataLoop();
             System.out.println("Program complete.");
             System.out.println("Would you like to start another house? (Y/N)");
             userLoopCheck = in.readLine().charAt(0);
