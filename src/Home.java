@@ -176,6 +176,156 @@ public class Home {
             System.out.println("Would you like to start another house? (Y/N)");
             userLoopCheck = in.readLine().charAt(0);
         }
-        System.out.println("Program terminating.");
+        System.out.println("Program terminating, have a nice day.");
     }
 }
+
+// OUTPUT
+
+// All numeric values entered should be positive integers
+// Program starting for house no. 1
+// Enter budget: -10
+// Value is zero or not positive
+// Try Again: 0
+// Value is zero or not positive
+// Try Again: 1000
+// Enter length: 0
+// Value is zero or not positive
+// Try Again: -3
+// Value is zero or not positive
+// Try Again: 5
+// Enter width: -33
+// Value is zero or not positive
+// Try Again: 0
+// Value is zero or not positive
+// Try Again: 10
+// Enter no. of floors: -3
+// Value is zero or not positive
+// Try Again: 0
+// Value is zero or not positive
+// Try Again: 3
+// Enter your house's style code: w
+// Doesn't match any available styles
+// Try Again: a
+// Doesn't match any available styles
+// Try Again: x
+// Doesn't match any available styles
+// Try Again: m
+//
+// Information for your house:
+// Budget: 1000
+// Length: 5
+// Width: 10
+// Floors: 3
+// Style: Minimum
+//
+// The cost of your house is: 15000
+// Budget is not enough.
+// Would you like to change any values? (Y/N)
+// Y
+// Which value would you like to change?
+// Enter the first letter: w
+// Enter new width: 0
+// Value is zero or not positive
+// Try Again: -3
+// Value is zero or not positive
+// Try Again: 3
+//
+// New information for your house:
+// Budget: 1000
+// Length: 5
+// Width: 3
+// Floors: 3
+// Style: Minimum
+//
+// The cost of your house is: 4500
+// Budget is not enough.
+// Would you like to change any other values? (Y/N)
+// Y
+// Which value would you like to change?
+// Enter the first letter: f
+// Enter new no. of floors: 2
+//
+// New information for your house:
+// Budget: 1000
+// Length: 5
+// Width: 3
+// Floors: 2
+// Style: Minimum
+//
+// The cost of your house is: 3000
+// Budget is not enough.
+// Would you like to change any other values? (Y/N)
+// Y
+// Which value would you like to change?
+// Enter the first letter: s
+// Enter your house's style code: x
+// Doesn't match any available styles
+// Try Again: e
+//
+// New information for your house:
+// Budget: 1000
+// Length: 5
+// Width: 3
+// Floors: 2
+// Style: Energy-Efficient
+//
+// The cost of your house is: 4500
+// Budget is not enough.
+// Would you like to change any other values? (Y/N)
+// Y
+// Which value would you like to change?
+// Enter the first letter: b
+// Enter new budget: 4500
+//
+// New information for your house:
+// Budget: 4500
+// Length: 5
+// Width: 3
+// Floors: 2
+// Style: Energy-Efficient
+//
+// The cost of your house is: 4500
+// Budget is enough.
+// Would you like to change any other values? (Y/N)
+// N
+// Program complete.
+// Would you like to start another house? (Y/N)
+// Y
+// Program starting for house no. 2
+// Enter budget: 100000
+// Enter length: 10
+// Enter width: 10
+// Enter no. of floors: 10
+// Enter your house's style code: c
+//
+// Information for your house:
+// Budget: 100000
+// Length: 10
+// Width: 10
+// Floors: 10
+// Style: Custom
+//
+// The cost of your house is: 200000
+// Budget is not enough.
+// Would you like to change any values? (Y/N)
+// Y
+// Which value would you like to change?
+// Enter the first letter: s
+// Enter your house's style code: m
+//
+// New information for your house:
+// Budget: 100000
+// Length: 10
+// Width: 10
+// Floors: 10
+// Style: Minimum
+//
+// The cost of your house is: 100000
+// Budget is enough.
+// Would you like to change any other values? (Y/N)
+// N
+// Program complete.
+// Would you like to start another house? (Y/N)
+// N
+// Program terminating, have a nice day.
