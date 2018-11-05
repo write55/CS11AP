@@ -102,11 +102,7 @@ public class Home {
             cost = this.calculateCost();
             System.out.println("\nNew information for your house: " + this.toString());
             System.out.println("\nThe cost of your house is: " + cost);
-            if (cost > this.budget) {
-                System.out.println("Budget is not enough.");
-            } else {
-                System.out.println("Budget is enough.");
-            }
+            checkCost(cost, this.budget);
             System.out.println("Would you like to change any other values? (Y/N)");
             query = in.readLine().toUpperCase().charAt(0);
         }
@@ -115,19 +111,27 @@ public class Home {
     // CALCULATIONS/UTILITY (toString, etc)
     // Calculates the cost of a house from a "house" object's style
     public int calculateCost() {
-        int cost = 0;
         int totalArea = this.length * this.width * this.floors;
         char c = this.style;
         if (c == 'M') {
-            cost += MINIMUM_COST * totalArea;
+            totalArea *= MINIMUM_COST;
         } else if (c == 'S') {
-            cost += STANDARD_COST * totalArea;
+            totalArea *= STANDARD_COST;
         } else if (c == 'E') {
-            cost += ENERGY_COST * totalArea;
+            totalArea *= ENERGY_COST;
         } else {
-            cost += CUSTOM_COST * totalArea;
+            totalArea *= CUSTOM_COST;
         }
-        return cost;
+        return totalArea;
+    }
+
+    // Method to check if budget is greater than cost and print out if it's enough
+    public static void checkCost(int cost, int budget) {
+        if (cost > budget) {
+            System.out.println("Budget is not enough.");
+        } else {
+            System.out.println("Budget is enough.");
+        }
     }
 
     // Method to convert style character to full word
@@ -166,11 +170,7 @@ public class Home {
             System.out.println("\n" + "Information for your house:" + house.toString());
             int cost = house.calculateCost();
             System.out.println("\nThe cost of your house is: " + cost);
-            if (cost > house.budget) {
-                System.out.println("Budget is not enough.");
-            } else {
-                System.out.println("Budget is enough.");
-            }
+            checkCost(cost, house.budget);
             house.changeDataLoop();
             System.out.println("Program complete.");
             System.out.println("Would you like to start another house? (Y/N)");
