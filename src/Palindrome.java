@@ -15,10 +15,10 @@ public class Palindrome {
 		int left = 0;
 		int right = str.length() - 1;
 		while (right - left > 0) {
-			while (Character.isLetterOrDigit(str.charAt(left)) == false) {
+			while (!Character.isLetterOrDigit(str.charAt(left))) {
 				left++;
 			}
-			while (Character.isLetterOrDigit(str.charAt(right)) == false) {
+			while (!Character.isLetterOrDigit(str.charAt(right))) {
 				right--;
 			}
 
@@ -38,8 +38,8 @@ public class Palindrome {
 				+ "\nEnter 0 to exit the program.");
 		System.out.print("Enter a String: ");
 		String input = in.readLine();
-		while (input != "0") {
-			if (palindromeCheck(input) == true) {
+		while (!input.equals("0")) {
+			if (palindromeCheck(input)) {
 				System.out.println("OK");
 			} else {
 				System.out.println("X");
