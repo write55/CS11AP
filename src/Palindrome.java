@@ -23,6 +23,7 @@ public class Palindrome {
             }
             while (!Character.isLetterOrDigit(str.charAt(right))) {
                 right--;
+                // Probably don't need this
                 if (right == 0) {
                     return false;
                 }
