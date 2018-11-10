@@ -14,7 +14,7 @@ public class Palindrome {
     public static boolean palindromeCheck(String str) {
         int left = 0;
         int right = str.length() - 1;
-        while (right - left > 0) {
+        while (right > left) {
             while (!Character.isLetterOrDigit(str.charAt(left))) {
                 left++;
                 if (left == str.length()) {
@@ -25,11 +25,11 @@ public class Palindrome {
                 right--;
             }
 
-            if (Character.toLowerCase(str.charAt(left)) != Character.toLowerCase(str.charAt(right))) {
-                return false;
-            } else {
+            if (Character.toLowerCase(str.charAt(left)) == Character.toLowerCase(str.charAt(right))) {
                 left++;
                 right--;
+            } else {
+                return false;
             }
         }
         return true;
