@@ -12,14 +12,16 @@ import java.io.InputStreamReader;
 
 public class Tally {
 
+    // NO-ARGUMENT CONSTRUCTOR
     public Tally() {
 
     }
 
+    // PRIVATE DATA
     private int[] letters = new int[26];
     private double total = 0.0;
 
-    // OTHER METHODS
+    // Method to read the file, reads one line at a time
     public String inputFile() throws IOException { // This doesn't work
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter filename with extension, must be in same directory as program\nEnter: ");
