@@ -14,6 +14,7 @@ public class Tally {
     private int[] letters = new int[26];
     private int total = 0;
 
+    // GETTERS
     public int[] getLetters() {
         return letters;
     }
@@ -22,6 +23,7 @@ public class Tally {
         return total;
     }
 
+    // OTHER METHODS
     public String inputFile() throws IOException { // This doesn't work
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter filename with extension, must be in same directory as program\nEnter: ");
@@ -45,6 +47,11 @@ public class Tally {
                 this.total++;
             }
         }
+    }
+
+    // toString prints array and finds percentages
+    public String toString() {
+        return null;
     }
 
     public static void main(String[] args) throws IOException {
