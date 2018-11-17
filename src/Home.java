@@ -108,7 +108,7 @@ public class Home {
         }
     }
 
-    // CALCULATIONS/UTILITY (toString, etc)
+    // CALCULATIONS/UTILITY (printArray, etc)
     // Calculates the cost of a house from a "house" object's style
     public int calculateCost() {
         int totalArea = this.length * this.width * this.floors;

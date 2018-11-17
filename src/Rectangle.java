@@ -77,7 +77,7 @@ public class Rectangle {
 		return in.readLine().charAt(0);
 	}
 
-	// toString also takes care of finding area then prints out l, w, a
+	// printArray also takes care of finding area then prints out l, w, a
 	public String toString() {
 		int w = this.getWidth();
 		int h = this.getHeight();
