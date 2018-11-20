@@ -28,7 +28,7 @@ public class Tally {
         System.out.print("Enter full path of file\nEnter: ");
         FileReader readFile = new FileReader(in.readLine());
         BufferedReader inFile = new BufferedReader(readFile);
-        System.out.println("Reading File...");
+        System.out.println("\nReading File...\n");
         String input = inFile.readLine();
         while (input != null) {
             this.convertLetter(input);

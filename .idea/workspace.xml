@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12d4f84e-3961-46e1-a813-8dc7f71512dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tally.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tally.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +27,7 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="6" />
+          <entry key="java" value="7" />
           <entry key="txt" value="3" />
           <entry key="xml" value="1" />
         </counts>
@@ -40,20 +36,20 @@
         <counts>
           <entry key="Git file" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="6" />
+          <entry key="JAVA" value="7" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1721" />
+          <entry key="java" value="1896" />
           <entry key="txt" value="102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1721" />
+          <entry key="JAVA" value="1896" />
           <entry key="PLAIN_TEXT" value="102" />
         </counts>
       </usages-collector>
@@ -67,10 +63,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tally.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1058">
-              <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+            <state relative-caret-position="368">
+              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#2567#0" expanded="true" />
                 <element signature="method#Tally#0;class#Tally#0" />
               </folding>
             </state>
@@ -138,7 +134,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/workspace.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542681343595" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542681506130" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -203,26 +199,26 @@
       <option name="project" value="LOCAL" />
       <updated>1542488623481</updated>
     </task>
-    <task id="LOCAL-00004" summary="Fixed Return to Javaland">
-      <created>1539739815596</created>
+    <task id="LOCAL-00004" summary="LetterTally program">
+      <created>1542681169591</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1539739815596</updated>
+      <updated>1542681169592</updated>
     </task>
-    <task id="LOCAL-00005" summary="Started Art Registration Program">
-      <created>1540005243726</created>
+    <task id="LOCAL-00005" summary="LetterTally program">
+      <created>1542681324101</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1540005243727</updated>
+      <updated>1542681324101</updated>
     </task>
-    <task id="LOCAL-00006" summary="asdfjkl;asdfjkl;">
-      <created>1540052384653</created>
+    <task id="LOCAL-00006" summary="LetterTally program">
+      <created>1542681411869</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1540052384653</updated>
+      <updated>1542681411869</updated>
     </task>
     <task id="LOCAL-00007" summary="Started Registration">
       <created>1540251143944</created>
@@ -385,7 +381,7 @@
       <option name="project" value="LOCAL" />
       <updated>1542468881469</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -398,14 +394,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
+    <frame x="0" y="0" width="2048" height="1152" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.60018384" visible="true" weight="0.20019531" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.599061" visible="true" weight="0.20019531" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info id="Structure" order="5" sideWeight="0.3998162" side_tool="true" weight="0.20019531" />
+      <window_info id="Structure" order="5" sideWeight="0.40093896" side_tool="true" weight="0.20479521" />
       <window_info id="Favorites" order="6" sideWeight="0.4" side_tool="true" weight="0.1988012" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32996324" />
@@ -414,7 +411,7 @@
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32777232" />
       <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4995005" weight="0.32580963" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004995" side_tool="true" weight="0.3234165" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004995" side_tool="true" weight="0.3226103" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" sideWeight="0.49951172" weight="0.32679096" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32628676" />
       <window_info anchor="bottom" x="0" y="420" width="2048" height="312" id="Run" order="10" weight="0.36084452" />
@@ -505,9 +502,6 @@
         <state relative-caret-position="-1564" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Javaland.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CompSci Stuff.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -542,12 +536,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Javaland.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tally.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+        <state relative-caret-position="368">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#2567#0" expanded="true" />
             <element signature="method#Tally#0;class#Tally#0" />
           </folding>
         </state>
