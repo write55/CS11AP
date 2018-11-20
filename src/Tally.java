@@ -12,14 +12,14 @@ import java.io.InputStreamReader;
 
 public class Tally {
 
+    // PRIVATE DATA
+    private int[] letters = new int[26];
+    private double total = 0.0;
+
     // NO-ARGUMENT CONSTRUCTOR
     public Tally() {
 
     }
-
-    // PRIVATE DATA
-    private int[] letters = new int[26];
-    private double total = 0.0;
 
     // Method to read the file, reads one line at a time
     public void readFile() throws IOException {
