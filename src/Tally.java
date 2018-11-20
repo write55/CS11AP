@@ -2,7 +2,8 @@
 /*
 Aaron Wu
 11/18/18
-
+Program takes input for the path of a file, then reads it and tallies up the total number of each letter
+The Program then outputs the counts and percentages of each letter
  */
 
 import java.io.BufferedReader;
