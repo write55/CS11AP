@@ -22,23 +22,23 @@ public class Tally {
     private double total = 0.0;
 
     // Method to read the file, reads one line at a time
-    public String inputFile() throws IOException { // This doesn't work
+    public void readFile() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter filename with extension, must be in same directory as program\nEnter: ");
+        System.out.print("Enter full path of file\nEnter: ");
         FileReader readFile = new FileReader(in.readLine());
         BufferedReader inFile = new BufferedReader(readFile);
         System.out.println("Reading File...");
         String input = inFile.readLine();
         while (input != null) {
+            this.convertLetter(input);
             System.out.println(input);
             input = inFile.readLine();
         }
         inFile.close();
-        return input;
     }
 
     // Converts letter to position in array and increases that position and the total
-    // Reads one line at a time, never called in main
+    // Called for one line at a time, never called in main
     public void convertLetter(String file) {
         for (int i = 0; i < file.length(); i++) {
             // If character returns less than 65 it's not a letter
@@ -71,8 +71,7 @@ public class Tally {
 
     public static void main(String[] args) throws IOException {
         Tally file = new Tally();
-        file.convertLetter("The quick brown fox jumps over the lazy dog.");
+        file.readFile();
         file.printArray();
-
     }
 }
