@@ -43,7 +43,7 @@ public class Tally {
     public void convertLetter(String file) {
         for (int i = 0; i < file.length(); i++) {
             // If character returns less than 65 it's not a letter
-            if ((int) file.charAt(i) > 64) {
+            if (file.charAt(i) > 64) {
                 this.letters[(int) Character.toUpperCase(file.charAt(i)) - 65]++;
                 this.total++;
             }
