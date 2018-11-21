@@ -44,7 +44,7 @@ public class Tally {
         for (int i = 0; i < file.length(); i++) {
             // If character returns less than 65 it's not a letter
             if (file.charAt(i) > 64) {
-                this.letters[(int) Character.toUpperCase(file.charAt(i)) - 65]++;
+                this.letters[Character.toUpperCase(file.charAt(i)) - 65]++;
                 this.total++;
             }
         }
