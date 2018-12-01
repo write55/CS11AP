@@ -22,18 +22,16 @@ public class Merge {
     private int[] array;
     private int filled;
 
-    // TODO Add field for filled on 3rd array
     // CONSTRUCTOR - only argument for array length
     public Merge(int length) {
         array = new int[length];
     }
 
-    // GETTER
+    // GETTER/SETTER - for filled only
     public int getFilled() {
         return filled;
     }
 
-    // SETTER
     public void setFilled(int filled) {
         this.filled = filled;
     }
@@ -69,21 +67,35 @@ public class Merge {
             }
             array[possible] = temp;
         }
+
     }
 
-    // TODO Merge Method
+    // TODO Check Conditions and stuff
     public void mergeArrays(Merge X, Merge Y) {
-        int c1 = 0, c2 = 0;
-        for (int i = 0; i < this.array.length; i++) {
-            while (c1 < X.filled && c2 < Y.filled) {
-                if (X.array[c1] < Y.array[c2]) {
-                    this.array[i] = X.array[c1];
-                    c1++;
-                } else {
-                    this.array[i] = Y.array[c2];
-                    c2++;
-                }
+        int c1 = 0, c2 = 0, i = 0;
+        while (c1 < X.filled && c2 < Y.filled) {
+            if (X.array[c1] < Y.array[c2]) {
+                this.array[i] = X.array[c1];
+                c1++;
+            } else if (X.array[c1] > Y.array[c2]) {
+                this.array[i] = Y.array[c2];
+                c2++;
+            } else {
+                this.array[i] = X.array[c1];
+                this.filled--;
+                c1++;
+                c2++;
             }
+            i++;
+        }
+        // Only one loop ever runs
+        for (; c1 < X.filled; c1++) {
+            this.array[i] = X.array[c1];
+            i++;
+        }
+        for (; c2 < Y.filled; c2++) {
+            this.array[i] = X.array[c2];
+            i++;
         }
     }
 
@@ -100,18 +112,14 @@ public class Merge {
         second.inputArray();
         System.out.println("\nSorted arrays:");
         first.sortArray();
-        //first.printArray(1);
-        System.out.println(Arrays.toString(first.array));
+        first.printArray(1);
         second.sortArray();
-        //second.printArray(2);
-        System.out.println(Arrays.toString(second.array));
+        second.printArray(2);
         System.out.println("\nMerged Array:");
         Merge combined = new Merge(first.getFilled() + second.getFilled());
         combined.setFilled(first.getFilled() + second.getFilled());
         combined.mergeArrays(first, second);
-        //combined.printArray(3);
-        System.out.println(Arrays.toString(combined.array));
-
+        combined.printArray(3);
     }
 
 }

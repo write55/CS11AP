@@ -45,14 +45,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2141" />
-          <entry key="txt" value="182" />
+          <entry key="java" value="3500" />
+          <entry key="txt" value="195" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2141" />
-          <entry key="PLAIN_TEXT" value="182" />
+          <entry key="JAVA" value="3500" />
+          <entry key="PLAIN_TEXT" value="195" />
         </counts>
       </usages-collector>
     </session>
@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Merge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1022">
-              <caret line="112" column="51" selection-start-line="112" selection-start-column="51" selection-end-line="112" selection-end-column="51" />
+            <state relative-caret-position="401">
+              <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
               <folding>
                 <element signature="e#0#2881#0" expanded="true" />
               </folding>
@@ -136,7 +136,7 @@
   <component name="PropertiesComponent">
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/workspace.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543619984449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543631211340" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -359,12 +359,12 @@
       <option name="project" value="LOCAL" />
       <updated>1542764324125</updated>
     </task>
-    <task id="LOCAL-00009" summary="Re-formatted Home.java">
-      <created>1540848369042</created>
+    <task id="LOCAL-00009" summary="Merge Program">
+      <created>1543620004750</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1540848369042</updated>
+      <updated>1543620004751</updated>
     </task>
     <task id="LOCAL-00010" summary="Test commit/push">
       <created>1540852098229</created>
@@ -506,7 +506,7 @@
       <option name="project" value="LOCAL" />
       <updated>1542468881469</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -531,15 +531,15 @@
       <window_info id="Favorites" order="6" sideWeight="0.4" side_tool="true" weight="0.1988012" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32996324" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39962122" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39889705" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32777232" />
       <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4995005" weight="0.32580963" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50097656" side_tool="true" weight="0.35988483" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50146484" side_tool="true" weight="0.359375" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49902344" weight="0.32629558" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32628676" />
-      <window_info active="true" anchor="bottom" x="0" y="420" width="2048" height="312" id="Run" order="10" sideWeight="0.49902344" visible="true" weight="0.359375" />
+      <window_info anchor="bottom" x="0" y="420" width="2048" height="312" id="Run" order="10" sideWeight="0.49853516" weight="0.359375" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -600,7 +600,8 @@
     <MESSAGE value="Edited Palindrome Program" />
     <MESSAGE value="LetterTally program" />
     <MESSAGE value="Finished tally program" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished tally program" />
+    <MESSAGE value="Merge Program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge Program" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -675,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Merge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
-          <caret line="112" column="51" selection-start-line="112" selection-start-column="51" selection-end-line="112" selection-end-column="51" />
+        <state relative-caret-position="401">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
           <folding>
             <element signature="e#0#2881#0" expanded="true" />
           </folding>
