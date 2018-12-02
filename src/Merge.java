@@ -57,17 +57,30 @@ public class Merge {
     // TODO Sort Method - switch to bubble or selection or just handle duplicates
     // Sorts arrays, for use on first and second
     public void sortArray() {
+        int duplicates = 0;
         // Insertion Sort (From slides)
         for (int j = 1; j < filled; j++) {
             int temp = array[j];
             int possible = j;
-            while (possible > 0 && temp < array[possible - 1]) {
+            while (possible > 0 && temp <= array[possible - 1]) {
+                if (temp == array[possible - 1]) {
+                    // Ensure duplicate always gets sent to front of array
+                    temp = array[0] - 1;
+                    // Store number of duplicates
+                    duplicates++;
+                }
                 array[possible] = array[possible - 1];
                 possible--;
             }
             array[possible] = temp;
         }
-
+        // Removal Loop
+        for (; duplicates > 0; duplicates--) {
+            filled--;
+            for (int i = 0; i < filled; i++) {
+                array[i] = array[i + 1];
+            }
+        }
     }
 
     // TODO Check Conditions and stuff
