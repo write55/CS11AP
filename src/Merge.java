@@ -2,19 +2,15 @@
 /*
 Aaron Wu
 11/27/18
-TODO finish description 
+Program takes input for two arrays as strings and sorts them using the insertion sort algorithm
+The sorting algorithm is modified to take care of duplicates
+The program will then combine the two arrays, removing any duplicates between them
  */
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
-
-// check element on one list to one on other list, increase position for lesser one and append to final list
-// if duplicates are present just ignore them, don't put the condition in the if
-// use that for the final, sort both first - do insertion sort maybe
-// merge has 1 array with length, have 3 objects
 
 public class Merge {
 
@@ -54,7 +50,6 @@ public class Merge {
         System.out.println();
     }
 
-    // TODO Sort Method - switch to bubble or selection or just handle duplicates
     // Sorts arrays, for use on first and second
     public void sortArray() {
         int duplicates = 0;
@@ -83,7 +78,7 @@ public class Merge {
         }
     }
 
-    // TODO Check Conditions and stuff
+    // Merges arrays together, takes two merge objects as arguments
     public void mergeArrays(Merge X, Merge Y) {
         int c1 = 0, c2 = 0, i = 0;
         while (c1 < X.filled && c2 < Y.filled) {
