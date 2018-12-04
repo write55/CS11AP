@@ -1,6 +1,20 @@
 
 public class Student {
 
+	// CONSTANTS
+	public static final char code1 = 'C';
+	public static final String course1 = "Computer Science";
+	public static final char code2 = 'E';
+	public static final String course2 = "Education";
+	public static final char code3 = 'M';
+	public static final String course3 = "Mathematics";
+	public static final char code4 = 'B';
+	public static final String course4 = "Business";
+	public static final char code5 = 'N';
+	public static final String course5 = "Engineering";
+	public static final char code6 = 'A';
+	public static final String course6 = "Art";
+
 	// PRIVATE DATA
 	private int id;
 	private int score;
@@ -41,18 +55,18 @@ public class Student {
 
 	public static String convertCode(char code) {
 		switch (code) {
-		case 'C':
-			return "Computer Science";
-		case 'E':
-			return "Education";
-		case 'M':
-			return "Mathematics";
-		case 'B':
-			return "Business";
-		case 'N':
-			return "Engineering";
-		case 'A':
-			return "Art";
+		case code1:
+			return course1;
+		case code2:
+			return course2;
+		case code3:
+			return course3;
+		case code4:
+			return course4;
+		case code5:
+			return course5;
+		case code6:
+			return course6;
 		default:
 			return "Incorrect Course Code";
 		}
