@@ -53,6 +53,7 @@ public class Student {
 		this.course = course;
 	}
 
+	// Convert code to full string, doesn't use private data so static
 	public static String convertCode(char code) {
 		switch (code) {
 		case code1:

@@ -33,9 +33,33 @@ public class StudentArray {
 		System.out.println("\nReading File...\n");
 		String input = inFile.readLine();
 		while (input != null) {
+			tokenizeString(input);
 			System.out.println(input);
 			input = inFile.readLine();
 		}
 		inFile.close();
+	}
+
+	// Takes 3 values from string, inputs them into the student array
+	// called in file reader method
+	public void tokenizeString(String input) throws IOException {
+		StringTokenizer st = new StringTokenizer(input);
+		for (filled = 0; filled < array.length && st.hasMoreTokens(); filled++) {
+			array[filled] = new Student(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
+					st.nextToken().charAt(0));
+		}
+	}
+
+	// Prints array, called "arrayToString" to distinguish toString in Student
+	public void arrayToString() {
+		for (int i = 0; i < filled; i++) {
+			System.out.println(array[i].toString());
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		StudentArray roster = new StudentArray();
+		roster.readFile();
+		roster.arrayToString();
 	}
 }
