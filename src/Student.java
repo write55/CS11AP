@@ -20,7 +20,7 @@ public class Student {
     private int score;
     private char course;
 
-    // CONSTRUTOR
+    // CONSTRUCTOR
     public Student(int id, int score, char course) {
         this.id = id;
         this.score = score;
