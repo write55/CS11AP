@@ -55,21 +55,36 @@ public class Student {
 
 	// Converts code to full string, doesn't use private data so static
 	public static String convertCode(char code) {
-		switch (code) {
-		case code1:
+		if (code == code1) {
 			return course1;
-		case code2:
+		} else if (code == code2) {
 			return course2;
-		case code3:
+		} else if (code == code3) {
 			return course3;
-		case code4:
+		} else if (code == code4) {
 			return course4;
-		case code5:
+		} else if (code == code5) {
 			return course5;
-		case code6:
+		} else if (code == code6) {
 			return course6;
-		default:
+		} else {
 			return "Incorrect Course Code";
+		}
+	}
+
+	// Convert score to letter grade
+	// For use in StudentArray
+	public static char convertScore(int score) {
+		if (score >= 90) {
+			return 'A';
+		} else if (score >= 80) {
+			return 'B';
+		} else if (score >= 70) {
+			return 'C';
+		} else if (score >= 65) {
+			return 'D';
+		} else {
+			return 'F';
 		}
 	}
 
