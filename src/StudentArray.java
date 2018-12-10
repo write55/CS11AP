@@ -13,7 +13,7 @@ public class StudentArray {
 
 	// PRIVATE DATA
 	private Student[] array = new Student[studentMax];
-	private int filled;
+	private int filled = 0;
 	private double mean;
 	private double median;
 	private int highest;
@@ -43,7 +43,7 @@ public class StudentArray {
 	// called in file reader method
 	public void tokenizeString(String input) {
 		StringTokenizer st = new StringTokenizer(input);
-		for (filled = 0; filled < array.length && st.hasMoreTokens(); filled++) {
+		for (; filled < array.length && st.hasMoreTokens(); filled++) {
 			array[filled] = new Student(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
 					st.nextToken().charAt(0));
 		}
@@ -87,7 +87,63 @@ public class StudentArray {
 
 	// STATISTICS METHODS/OTHER
 
-	// Prints array, called "arrayToString" to distinguish toString in Student
+	// Mean
+	public void findMean() {
+		int total = 0, counter = 0;
+		for (int i = 0; i < filled; i++) {
+			if (checkScore(array[i].getScore())) {
+				total += array[i].getScore();
+				counter++;
+			}
+		}
+		mean = (double) total / counter;
+	}
+
+	// Median
+	public void findMedian() {
+
+	}
+
+	// Highest/Lowest Score
+	public void findExtrema() {
+		int i = 0, j = filled;
+		while (!checkScore(array[i].getScore())) {
+			i++;
+		}
+		while (!checkScore(array[j].getScore())) {
+			j--;
+		}
+		lowest = array[i].getScore();
+		highest = array[j].getScore();
+	}
+
+	// Checks to make sure given score is between 0 and 100
+	// Static for usage in other methods without an object
+	public static boolean checkScore(int score) {
+		if (score > 100 || score < 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public int findBadData() {
+		int output = 0;
+		for (int i = 0; i < filled; i++) {
+			if (array[i].getScore() > 100 || array[i].getScore() < 0) {
+				output++;
+			}
+		}
+		filled -= output;
+		return output;
+	}
+
+	// Percentage of each grade
+	public void gradePercents() {
+
+	}
+
+	// Prints array, "arrayToString" to distinguish from toString in Student
 	public void arrayToString() {
 		for (int i = 0; i < filled; i++) {
 			System.out.println("\n" + array[i].toString());
@@ -96,10 +152,15 @@ public class StudentArray {
 
 	public static void main(String[] args) throws IOException {
 		StudentArray roster = new StudentArray();
+		System.out.println("Program will read student's ids, scores, and course choices from a file"
+				+ "\nMake sure it is properly formatted or the program will not work correctly"
+				+ "\nIf your score is over 100 or below 0 it will not be included in statistics calculations but will still be printed");
 		roster.readFile();
 		roster.sortId();
 		System.out.println("Complete list - sorted by ID");
 		roster.arrayToString();
 		roster.sortScore();
+		roster.findMean();
+		System.out.println(roster.mean);
 	}
 }
