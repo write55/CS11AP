@@ -18,6 +18,25 @@ public class StudentArray {
     private double median;
     private int highest;
     private int lowest;
+    private int badDataLower;
+    private int badDataUpper;
+
+    // GETTERS
+    public double getMean() {
+        return mean;
+    }
+
+    public double getMedian() {
+        return median;
+    }
+
+    public int getHighest() {
+        return highest;
+    }
+
+    public int getLowest() {
+        return lowest;
+    }
 
     // NO ARGUMENT CONSTRUCTOR
     public StudentArray() {
@@ -50,7 +69,6 @@ public class StudentArray {
     }
 
     // SORTING METHODS
-
     // Sorts array by ID, Selection sort
     public void sortId() {
         for (int j = 0; j < filled - 1; j++) {
@@ -86,62 +104,61 @@ public class StudentArray {
     }
 
     // STATISTICS METHODS/OTHER
-
     // Mean
     public void findMean() {
         int total = 0, counter = 0;
-        for (int i = 0; i < filled; i++) {
-            if (checkScore(array[i].getScore())) {
-                total += array[i].getScore();
-                counter++;
-            }
+        for (int i = badDataLower; i < filled - badDataUpper; i++) {
+            total += array[i].getScore();
+            counter++;
         }
-        mean = (double) total / counter;
+        mean = (int) (((double) total / counter) * 100 + .5) / 100.0;
     }
 
     // Median
     public void findMedian() {
+        if (filled - (badDataLower + badDataUpper) % 2 == 0) {
 
+        } else {
+
+        }
     }
 
     // Highest/Lowest Score
     public void findExtrema() {
-        int i = 0, j = filled;
-        while (!checkScore(array[i].getScore())) {
-            i++;
-        }
-        while (!checkScore(array[j].getScore())) {
-            j--;
-        }
-        lowest = array[i].getScore();
-        highest = array[j].getScore();
+        lowest = array[badDataLower].getScore();
+        highest = array[filled - 1 - badDataUpper].getScore();
     }
 
-    // Checks to make sure given score is between 0 and 100
+    // To be called after array is sorted by score, calls checkScore
+    // Returns index as first value >=0, changes filled to first index <= 100
+    public void getPositions() {
+        badDataUpper = 0;
+        badDataLower = 0;
+        while (checkScore(array[badDataLower].getScore())) {
+            badDataLower++;
+        }
+        while (checkScore(array[filled - 1 - badDataUpper].getScore())) {
+            badDataUpper++;
+        }
+    }
+
+    // Returns false if given score is between 0 and 100
     // Static for usage in other methods without an object
     public static boolean checkScore(int score) {
-        if (score > 100 || score < 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return score > gradeMax || score < gradeMin;
     }
 
-    public int findBadData() {
-        int output = 0;
-        for (int i = 0; i < filled; i++) {
-            if (array[i].getScore() > 100 || array[i].getScore() < 0) {
-                output++;
-            }
-        }
-        filled -= output;
-        return output;
-    }
-
-    // Percentage of each grade
-    public void gradePercents() {
-
-    }
+//    // Percentage of each grade
+//    public void gradePercents() {
+//        for
+//        if (score >= 90) {
+//        } else if (score >= 80) {
+//        } else if (score >= 70) {
+//        } else if (score >= 65) {
+//        } else {
+//        }
+//
+//    }
 
     // Prints array, "arrayToString" to distinguish from toString in Student
     public void arrayToString() {
@@ -160,7 +177,12 @@ public class StudentArray {
         System.out.println("Complete list - sorted by ID");
         roster.arrayToString();
         roster.sortScore();
+        roster.getPositions();
         roster.findMean();
-        System.out.println(roster.mean);
+        roster.findExtrema();
+        System.out.println("Mean: " + roster.getMean() +
+                "\nMedian: " + roster.getMedian() +
+                "\nHighest Score: " + roster.getHighest() +
+                "\nLowest Score: " + roster.getLowest());
     }
 }

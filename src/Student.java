@@ -40,17 +40,13 @@ public class Student {
         return course;
     }
 
-    // SETTERS
+    // SETTERS - setCourse never used
     public void setId(int id) {
         this.id = id;
     }
 
     public void setScore(int score) {
         this.score = score;
-    }
-
-    public void setCourse(char course) {
-        this.course = course;
     }
 
     // Converts code to full string, doesn't use private data so static
@@ -69,22 +65,6 @@ public class Student {
             return course6;
         } else {
             return "Incorrect Course Code";
-        }
-    }
-
-    // Convert score to letter grade
-    // For use in StudentArray
-    public static char convertScore(int score) {
-        if (score >= 90) {
-            return 'A';
-        } else if (score >= 80) {
-            return 'B';
-        } else if (score >= 70) {
-            return 'C';
-        } else if (score >= 65) {
-            return 'D';
-        } else {
-            return 'F';
         }
     }
 
