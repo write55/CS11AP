@@ -183,6 +183,29 @@ public class StudentArray {
 		}
 	}
 
+	// Binary search method
+	public static int binarySearch(int[] elements, int target) {
+		int left = 0;
+		int right = elements.length - 1;
+		while (left <= right) {
+			int middle = (left + right) / 2;
+			if (target < elements[middle]) {
+				right = middle - 1;
+			} else if (target > elements[middle]) {
+				left = middle + 1;
+			} else {
+				return middle;
+			}
+		}
+		return -1;
+	}
+
+	public void findId() throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Enter an ID Number: ");
+		int target = Integer.parseInt(in.readLine());
+	}
+
 	public static void main(String[] args) throws IOException {
 		StudentArray roster = new StudentArray();
 		System.out.println("Program will read student's ids, scores, and course choices from a file"
@@ -206,194 +229,3 @@ public class StudentArray {
 		}
 	}
 }
-
-// OUTPUT
-//
-// Program will read student's ids, scores, and course choices from a file
-// Make sure it is properly formatted or the program will not work correctly
-// If your score is over 100 or below 0 it will not be included in statistics
-// Enter name of file, file must be in project directory
-// Enter: scores1.txt
-//
-// Reading File...
-//
-// Complete list - sorted by ID
-//
-// Id: 11
-// Score: 90
-// Course: Incorrect Course Code
-//
-// Id: 22
-// Score: 95
-// Course: Computer Science
-//
-// Id: 27
-// Score: -10
-// Course: Art
-//
-// Id: 32
-// Score: 89
-// Course: Education
-//
-// Id: 33
-// Score: 500
-// Course: Art
-//
-// Id: 39
-// Score: -8
-// Course: Mathematics
-//
-// Id: 43
-// Score: 88
-// Course: Mathematics
-//
-// Id: 50
-// Score: 100
-// Course: Engineering
-//
-// Id: 55
-// Score: 400
-// Course: Incorrect Course Code
-//
-// Id: 63
-// Score: 80
-// Course: Computer Science
-//
-// Id: 65
-// Score: -5
-// Course: Business
-//
-// Id: 73
-// Score: 0
-// Course: Engineering
-//
-// Id: 75
-// Score: 50
-// Course: Engineering
-//
-// Id: 87
-// Score: 99
-// Course: Education
-//
-// Id: 93
-// Score: 110
-// Course: Business
-//
-// Statistics:
-// Bad Data: 6
-// Mean: 76.78
-// Median: 89.0
-// Lowest Score: 0
-// Highest Score: 100
-//
-// A: 44.4%
-// B: 33.3%
-// C: 0.0%
-// D: 0.0%
-// F: 22.2%
-//
-//////////////////////////////////////////////////////////////////////////////////
-//
-// Program will read student's ids, scores, and course choices from a file
-// Make sure it is properly formatted or the program will not work correctly
-// If your score is over 100 or below 0 it will not be included in statistics
-// Enter name of file, file must be in project directory
-// Enter: scores2.txt
-//
-// Reading File...
-//
-// Complete list - sorted by ID
-//
-// Id: 11
-// Score: 90
-// Course: Incorrect Course Code
-//
-// Id: 17
-// Score: 95
-// Course: Computer Science
-//
-// Id: 22
-// Score: -10
-// Course: Art
-//
-// Id: 27
-// Score: 89
-// Course: Education
-//
-// Id: 32
-// Score: 500
-// Course: Art
-//
-// Id: 33
-// Score: 8
-// Course: Mathematics
-//
-// Id: 39
-// Score: 88
-// Course: Mathematics
-//
-// Id: 43
-// Score: 90
-// Course: Engineering
-//
-// Id: 44
-// Score: 400
-// Course: Incorrect Course Code
-//
-// Id: 50
-// Score: 80
-// Course: Computer Science
-//
-// Id: 53
-// Score: 70
-// Course: Business
-//
-// Id: 55
-// Score: 70
-// Course: Engineering
-//
-// Id: 63
-// Score: 50
-// Course: Engineering
-//
-// Id: 65
-// Score: 99
-// Course: Education
-//
-// Id: 73
-// Score: 90
-// Course: Business
-//
-// Id: 75
-// Score: 87
-// Course: Business
-//
-// Id: 83
-// Score: 85
-// Course: Engineering
-//
-// Id: 85
-// Score: 95
-// Course: Mathematics
-//
-// Id: 87
-// Score: 60
-// Course: Mathematics
-//
-// Id: 93
-// Score: 300
-// Course: Engineering
-//
-// Statistics:
-// Bad Data: 4
-// Mean: 77.88
-// Median: 87.5
-// Lowest Score: 8
-// Highest Score: 99
-//
-// A: 37.5%
-// B: 31.3%
-// C: 12.5%
-// D: 0.0%
-// F: 18.8%
-//
