@@ -1,7 +1,8 @@
 /*
 Aaron Wu
 12/12/18
-
+Main Program for array of student objects
+TODO finish description
  */
 
 import java.io.BufferedReader;
@@ -20,6 +21,7 @@ public class StudentArray {
     // PRIVATE DATA
     private Student[] array = new Student[studentMax];
     private int filled = 0;
+    // TODO remove private data
     private double mean;
     private double median;
     private int highest;
@@ -129,7 +131,7 @@ public class StudentArray {
     public void findMedian() {
         int length = rightBad - leftBad + 1;
         if (length % 2 == 0) {
-            median = (array[leftBad + length / 2].getScore() + array[rightBad - length / 2].getScore()) / 2;
+            median = (double) (array[leftBad + length / 2].getScore() + array[rightBad - length / 2].getScore()) / 2;
         } else {
             median = array[leftBad + length / 2].getScore();
         }
@@ -199,7 +201,7 @@ public class StudentArray {
         StudentArray roster = new StudentArray();
         System.out.println("Program will read student's ids, scores, and course choices from a file"
                 + "\nMake sure it is properly formatted or the program will not work correctly"
-                + "\nIf your score is over 100 or below 0 it will not be included in statistics calculations but will still be printed");
+                + "\nIf your score is over 100 or below 0 it will not be included in statistics");
         roster.readFile();
         roster.sortId();
         System.out.println("Complete list - sorted by ID");
@@ -212,8 +214,10 @@ public class StudentArray {
             roster.findMean();
             roster.findExtrema();
             roster.findMedian();
-            System.out.println("\nMean: " + roster.getMean() + "\nMedian: " + roster.getMedian() + "\nHighest Score: "
-                    + roster.getHighest() + "\nLowest Score: " + roster.getLowest());
+            System.out.println("Mean: " + roster.getMean() +
+                    "\nMedian: " + roster.getMedian() +
+                    "\nLowest Score: " + roster.getLowest() +
+                    "\nHighest Score: " + roster.getHighest());
             roster.gradePercents();
         } else {
             System.out.println("All scores are outside of 0 - 100, skipping statistics");

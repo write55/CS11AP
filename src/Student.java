@@ -1,3 +1,9 @@
+/*
+Aaron Wu
+12/12/18
+Student class, contains constants for courses and codes
+Private data: Student id, score, course taken (code)
+ */
 
 public class Student {
 
