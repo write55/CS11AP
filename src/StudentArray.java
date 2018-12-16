@@ -119,7 +119,7 @@ public class StudentArray {
         while (sentinel != 'N') {
             roster.findId();
             System.out.println("Would you like to continue? (Y/N)");
-            sentinel = in.readLine().charAt(0);
+            sentinel = in.readLine().toUpperCase().charAt(0);
         }
 
     }
