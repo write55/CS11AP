@@ -50,11 +50,12 @@ public class Guest {
 
 	// toString method
 	public String toString() {
-		return getLastName() + ", " + getFirstName() + getCompany() + getResponse();
+		return "Name: " + getLastName() + ", " + getFirstName() + "\nCompany: " + getCompany() + "\nResponse: "
+				+ getResponse();
 	}
 
 	public int compareGuests(Guest compare) {
-		// negative if referenced object is lexically lower
+		// negative if referenced object is lexically lower than argument
 		int firstValue = this.getFirstName().compareTo(compare.getFirstName());
 		int lastValue = this.getLastName().compareTo(compare.getLastName());
 		if (lastValue != 0) {

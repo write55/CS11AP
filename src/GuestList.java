@@ -16,7 +16,7 @@ public class GuestList {
 
 	public void readFile() throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Enter relative path of file");
+		System.out.print("Enter relative path of file: ");
 		FileReader readFile = new FileReader(in.readLine());
 		BufferedReader inFile = new BufferedReader(readFile);
 		System.out.println("\nReading File...\n");
@@ -30,12 +30,21 @@ public class GuestList {
 
 	private void tokenizeString(String input) {
 		StringTokenizer st = new StringTokenizer(input);
-		// guests.add();
-
+		while (st.hasMoreTokens()) {
+			addGuest(new Guest(st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken()));
+		}
 	}
 
+	// Adds new guest in sorted order
 	public void addGuest(Guest newGuest) {
-
+		if (newGuest.getResponse() == "?") {
+			newGuest.setResponse("maybe");
+		}
+		int posIndex = 0;
+		while (posIndex < guests.size() && newGuest.compareGuests(guests.get(posIndex + 1)) > 0) {
+			posIndex++;
+		}
+		guests.add(posIndex, newGuest);
 	}
 
 	public static void insertionSort(int[] elements) {
@@ -64,6 +73,18 @@ public class GuestList {
 			}
 		}
 		return -1;
+	}
+
+	public void printList() {
+		for (Guest i : guests) {
+			System.out.println(i.toString());
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		GuestList list = new GuestList();
+		list.readFile();
+		list.printList();
 	}
 
 	// integrate sorting and adding method, use binary search
