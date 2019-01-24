@@ -102,6 +102,8 @@ public class GuestList {
 	public int guestNumber() {
 		return 0;
 	}
+	
+	
 
 	public static void main(String[] args) throws IOException {
 		GuestList list = new GuestList();
