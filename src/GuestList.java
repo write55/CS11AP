@@ -75,10 +75,32 @@ public class GuestList {
 		return -1;
 	}
 
+	// Command Methods
+	// Find a guest
+	public void findGuest() throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		Guest target = new Guest("", "", "", "");
+		System.out.print("Enter the last name of a guest: ");
+		target.setLastName(in.readLine());
+		System.out.print("Enter the first name of a guest: ");
+		target.setFirstName(in.readLine());
+		int index = binarySearch(target);
+		if (index == -1) {
+			System.out.println("Guest not found");
+		} else {
+			guests.get(index).toString();
+		}
+	}
+
+	// Print guest list
 	public void printList() {
 		for (Guest i : guests) {
 			System.out.println("\n" + i.toString());
 		}
+	}
+
+	public int guestNumber() {
+		return 0;
 	}
 
 	public static void main(String[] args) throws IOException {
