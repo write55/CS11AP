@@ -8,9 +8,10 @@ import java.util.StringTokenizer;
 
 public class GuestList {
 
-    private ArrayList<Guest> guests = new ArrayList<Guest>();
+    private ArrayList<Guest> guests = new ArrayList<>();
 
     public GuestList() {
+
     }
 
     public void readFile() throws IOException {
@@ -59,14 +60,25 @@ public class GuestList {
         }
     }
 
+    // Method to make a guest object with a given first and last name
+    public static Guest enterGuestName() throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        Guest temp = new Guest("", "", "", "");
+        System.out.print("Enter the last name of a guest: ");
+        temp.setLastName(in.readLine());
+        System.out.print("Enter the first name of a guest: ");
+        temp.setFirstName(in.readLine());
+        return temp;
+    }
+
     public int binarySearch(Guest target) {
         int left = 0;
         int right = guests.size() - 1;
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (guests.get(middle).compareGuests(target) < 0) {
+            if (guests.get(middle).compareGuests(target) > 0) {
                 right = middle - 1;
-            } else if (guests.get(middle).compareGuests(target) > 0) {
+            } else if (guests.get(middle).compareGuests(target) < 0) {
                 left = middle + 1;
             } else {
                 return middle;
@@ -77,27 +89,15 @@ public class GuestList {
 
     // Command Methods
     // Find a guest
-    public void findGuest() throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        Guest target = new Guest("", "", "", "");
-        System.out.print("Enter the last name of a guest: ");
-        target.setLastName(in.readLine());
-        System.out.print("Enter the first name of a guest: ");
-        target.setFirstName(in.readLine());
+    public Guest binarySearchRuner(Guest target) throws IOException {
         int index = binarySearch(target);
         if (index == -1) {
-            System.out.println("Guest not found");
+            return null;
         } else {
-            System.out.println(guests.get(index).toString());
+            return guests.get(index);
         }
     }
 
-    // Print guest list
-    public void printList() {
-        for (Guest i : guests) {
-            System.out.println("\n" + i.toString());
-        }
-    }
 
     public void guestNumbers() {
         int attending = 0, notAttending = 0, maybe = 0;
@@ -115,13 +115,55 @@ public class GuestList {
                 "\nNumber of guests without response: " + maybe);
     }
 
+    public void changeResponse() throws IOException {
+        Guest temp = binarySearchRuner(enterGuestName());
+        // Remove these and handle it in main
+        if (temp == null) {
+            System.out.println("Guest not on list");
+        } else {
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Old Response: " + temp.getResponse() +
+                    "\nEnter new response: ");
+            String response = in.readLine();
+            if (response.equals(temp.getResponse())) {
+                System.out.println("New response same as old, no changes made");
+            } else {
+                temp.setResponse(response);
+                System.out.println("New response recorded");
+            }
+        }
+    }
+
+    public void findColleagues() throws IOException {
+        Guest temp = binarySearchRuner(enterGuestName());
+        // Remove and handle in main
+        if (temp == null) {
+            System.out.println("Guest not on list");
+        } else {
+            System.out.println("Company: " + temp.getCompany());
+            for (Guest i : guests) {
+                if (i.getCompany().equals(temp.getCompany())) {
+                    System.out.println(i.toString());
+                }
+            }
+        }
+
+    }
+
+    // Print guest list
+    public void printList() {
+        for (Guest i : guests) {
+            System.out.println("\n" + i.toString());
+        }
+    }
     // TODO change response method and get colleagues
 
     public static void main(String[] args) throws IOException {
         GuestList list = new GuestList();
         list.readFile();
-        list.printList();
         list.insertionSort();
+        list.printList();
+        list.changeResponse();
     }
 
     // integrate sorting and adding method, use binary search
