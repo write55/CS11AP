@@ -71,9 +71,4 @@ public class Guest {
         }
     }
 
-    public static void main(String[] args) {
-        Guest asdf = new Guest("Aaron", "Wu", "Aperture Science", "no");
-        Guest jkl = new Guest("Jorgen", "Wu", "Black Mesa", "yes");
-        System.out.println(asdf.compareGuests(jkl));
-    }
 }

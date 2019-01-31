@@ -73,7 +73,7 @@ public class GuestList {
 
     // Command Methods
     // Find a guest with name entered
-    public Guest binarySearchRunner(Guest target) throws IOException {
+    public Guest binarySearchRunner(Guest target) {
         int index = binarySearch(target);
         if (index == -1) {
             return null;
@@ -132,7 +132,7 @@ public class GuestList {
     }
 
     // Find a guest's colleagues
-    public void findColleagues(Guest temp) throws IOException {
+    public void findColleagues(Guest temp) {
         if (temp == null) {
             System.out.println("Guest not on list");
         } else {
@@ -154,22 +154,22 @@ public class GuestList {
 
     // Command Chooser
     public void runStuff(char input) throws IOException {
-        switch (Character.toUpperCase(input)) {
-            case 'G':
-                binarySearchRunner(enterGuestName()).toString();
-            case 'L':
-                printList();
-            case 'N':
-                guestNumbers();
-            case 'A':
-                Guest temp = enterGuestName();
-                changeResponse(temp);
-                addGuest(temp);
-            case 'R':
-                changeResponse(enterGuestName());
-            case 'C':
-                findColleagues(enterGuestName());
-
+        if (input == 'G') {
+            System.out.println(binarySearchRunner(enterGuestName()).toString());
+        } else if (input == 'L') {
+            printList();
+        } else if (input == 'N') {
+            guestNumbers();
+        } else if (input == 'A') {
+            Guest temp = enterGuestName();
+            changeResponse(temp);
+            addGuest(temp);
+        } else if (input == 'R') {
+            changeResponse(enterGuestName());
+        } else if (input == 'C') {
+            findColleagues(enterGuestName());
+        } else {
+            System.out.println("Not a command, try again");
         }
     }
 
@@ -177,8 +177,16 @@ public class GuestList {
         GuestList list = new GuestList();
         list.readFile();
         list.insertionSort();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Commands: \nG: Guest Information\nL: List Guests\nN: Number of Guests\nA: Add a Guest\nR: Change a Response\nC: Display a Guest's Colleagues\nQ: Quit");
+        System.out.print("Enter a Command: ");
+        char input = in.readLine().toUpperCase().charAt(0);
+        while (input != 'Q') {
+            list.runStuff(input);
+            System.out.print("Enter a Command: ");
+            input = in.readLine().toUpperCase().charAt(0);
+        }
         list.printList();
     }
 
-    // integrate sorting and adding method, use binary search
 }
