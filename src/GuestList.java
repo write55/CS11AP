@@ -92,10 +92,10 @@ public class GuestList {
     public static Guest enterGuestName() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         Guest temp = new Guest("", "", "", "");
-        System.out.print("Enter the last name of a guest: ");
-        temp.setLastName(in.readLine());
         System.out.print("Enter the first name of a guest: ");
         temp.setFirstName(in.readLine());
+        System.out.print("Enter the last name of a guest: ");
+        temp.setLastName(in.readLine());
         return temp;
     }
 
