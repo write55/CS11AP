@@ -86,6 +86,7 @@ public class GuestList {
         }
 
     }
+
     // FUNCTIONS
     // Allows user to enter name, returns a Guest object with that name
     public static Guest enterGuestName() throws IOException {
@@ -123,31 +124,23 @@ public class GuestList {
 
     // Allows user to change a given guest's response
     public void changeResponse(Guest temp) throws IOException {
-        if (temp == null) {
-            System.out.println("Guest not on list");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter response: ");
+        String response = in.readLine();
+        if (response.equals(temp.getResponse())) {
+            System.out.println("New response same as old, no changes made");
         } else {
-            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            System.out.print("Enter response: ");
-            String response = in.readLine();
-            if (response.equals(temp.getResponse())) {
-                System.out.println("New response same as old, no changes made");
-            } else {
-                temp.setResponse(response);
-                System.out.println("Response recorded");
-            }
+            temp.setResponse(response);
+            System.out.println("Response recorded");
         }
     }
 
     // Find a guest's colleagues
     public void findColleagues(Guest temp) {
-        if (temp == null) {
-            System.out.println("Guest not on list");
-        } else {
-            System.out.println("\nCompany: " + temp.getCompany());
-            for (Guest i : guests) {
-                if (i.getCompany().equals(temp.getCompany())) {
-                    System.out.println(i.toString());
-                }
+        System.out.println("\nCompany: " + temp.getCompany());
+        for (Guest i : guests) {
+            if (i.getCompany().equals(temp.getCompany())) {
+                System.out.println(i.toString());
             }
         }
     }
@@ -164,11 +157,10 @@ public class GuestList {
         Guest temp;
         if (input == 'G') {
             temp = binarySearch(enterGuestName());
-            // TODO put this in binary search method
-            if (temp != null) {
-                System.out.println(temp.toString());
-            } else {
+            if (temp == null) {
                 System.out.println("Guest Not on List");
+            } else {
+                System.out.println(temp.toString());
             }
         } else if (input == 'L') {
             printList();
@@ -181,14 +173,23 @@ public class GuestList {
             addGuest(temp);
         } else if (input == 'R') {
             temp = binarySearch(enterGuestName());
-            String response = temp.getResponse();
-            if (response.equals("?")) {
-                response = "maybe";
+            if (temp == null) {
+                System.out.println("Guest not on list");
+            } else {
+                String response = temp.getResponse();
+                if (response.equals("?")) {
+                    response = "maybe";
+                }
+                System.out.println("Old Response: " + response);
+                changeResponse(temp);
             }
-            System.out.println("Old Response: " + response);
-            changeResponse(binarySearch(enterGuestName()));
         } else if (input == 'C') {
-            findColleagues(binarySearch(enterGuestName()));
+            temp = binarySearch(enterGuestName());
+            if (temp == null) {
+                System.out.println("Guest not on list");
+            } else {
+                findColleagues(binarySearch(enterGuestName()));
+            }
         } else {
             System.out.println("Not a command, try again");
         }
