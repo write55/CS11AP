@@ -1,3 +1,8 @@
+/*
+Aaron Wu
+1/31/19
+Guest object class for GuestList, has compare method
+ */
 
 public class Guest {
 
@@ -48,18 +53,18 @@ public class Guest {
         this.response = response;
     }
 
-    // toString method
+    // TOSTRING - prints maybe for ? when given
     public String toString() {
         String response = getResponse();
         if (response.equals("?")) {
             response = "maybe";
         }
-        return "Name: " + getLastName() + ", " + getFirstName() + "\nCompany: " + getCompany() + "\nResponse: "
+        return "\nName: " + getLastName() + ", " + getFirstName() + "\nCompany: " + getCompany() + "\nResponse: "
                 + response;
     }
 
+    // COMPARE - returns negative if referenced object is lexically lower than argument
     public int compareGuests(Guest compare) {
-        // negative if referenced object is lexically lower than argument
         int firstValue = this.getFirstName().compareTo(compare.getFirstName());
         int lastValue = this.getLastName().compareTo(compare.getLastName());
         if (lastValue != 0) {

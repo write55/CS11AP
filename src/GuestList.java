@@ -1,3 +1,8 @@
+/*
+Aaron Wu
+1/31/19
+Program to handle guest objects, allows for reading of a file and usage of various other methods to organize a list of guests
+ */
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,6 +19,7 @@ public class GuestList {
 
     }
 
+    // FILE READER METHODS
     public void readFile() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter relative path of file: ");
@@ -25,6 +31,7 @@ public class GuestList {
             tokenizeString(input);
             input = inFile.readLine();
         }
+        System.out.println("Reading Complete.");
         inFile.close();
     }
 
@@ -35,19 +42,7 @@ public class GuestList {
         }
     }
 
-    // Adds new guest in sorted order
-    public void addGuest(Guest newGuest) {
-        if (guests.indexOf(newGuest) == -1) {
-            System.out.println("Guest already on List\n" + guests.get(guests.indexOf(newGuest)).toString());
-            return;
-        }
-        int posIndex = 0;
-        while (posIndex < guests.size() && newGuest.compareGuests(guests.get(posIndex + 1)) > 0) {
-            posIndex++;
-        }
-        guests.add(posIndex, newGuest);
-    }
-
+    // SORT GUESTS
     public void insertionSort() {
         for (int j = 1; j < guests.size(); j++) {
             Guest temp = guests.get(j);
@@ -60,7 +55,39 @@ public class GuestList {
         }
     }
 
-    // Method to make a guest object with a given first and last name
+    // BINARY SEARCH - returns object reference to target guest
+    public Guest binarySearch(Guest target) {
+        int left = 0;
+        int right = guests.size() - 1;
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (guests.get(middle).compareGuests(target) > 0) {
+                right = middle - 1;
+            } else if (guests.get(middle).compareGuests(target) < 0) {
+                left = middle + 1;
+            } else {
+                return guests.get(middle);
+            }
+        }
+        return null;
+    }
+
+    // ADD GUEST - puts in sorted position
+    public void addGuest(Guest newGuest) {
+        if (binarySearch(newGuest) == null) {
+            int posIndex = 0;
+            while (posIndex < guests.size() && newGuest.compareGuests(guests.get(posIndex + 1)) < 0) {
+                posIndex++;
+            }
+            guests.add(posIndex, newGuest);
+            System.out.println("Guest Added");
+        } else {
+            System.out.println("Guest already on List" + guests.get(guests.indexOf(newGuest)).toString());
+        }
+
+    }
+    // FUNCTIONS
+    // Allows user to enter name, returns a Guest object with that name
     public static Guest enterGuestName() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         Guest temp = new Guest("", "", "", "");
@@ -71,34 +98,14 @@ public class GuestList {
         return temp;
     }
 
-    // Command Methods
-    // Find a guest with name entered
-    public Guest binarySearchRunner(Guest target) {
-        int index = binarySearch(target);
-        if (index == -1) {
-            return null;
-        } else {
-            return guests.get(index);
-        }
+    // Changes given object's company, will only be used on new Guest
+    public void changeCompany(Guest temp) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter a company: ");
+        temp.setCompany(in.readLine());
     }
 
-    public int binarySearch(Guest target) {
-        int left = 0;
-        int right = guests.size() - 1;
-        while (left <= right) {
-            int middle = (left + right) / 2;
-            if (guests.get(middle).compareGuests(target) > 0) {
-                right = middle - 1;
-            } else if (guests.get(middle).compareGuests(target) < 0) {
-                left = middle + 1;
-            } else {
-                return middle;
-            }
-        }
-        return -1;
-    }
-
-    // Get number of guest responses
+    // Counts number of guests for each response and prints
     public void guestNumbers() {
         int attending = 0, notAttending = 0, maybe = 0;
         for (Guest i : guests) {
@@ -114,19 +121,19 @@ public class GuestList {
                 + notAttending + "\nNumber of guests without response: " + maybe);
     }
 
-    // Change a guest's response
+    // Allows user to change a given guest's response
     public void changeResponse(Guest temp) throws IOException {
         if (temp == null) {
             System.out.println("Guest not on list");
         } else {
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            System.out.print("Old Response: " + temp.getResponse() + "\nEnter new response: ");
+            System.out.print("Enter response: ");
             String response = in.readLine();
             if (response.equals(temp.getResponse())) {
                 System.out.println("New response same as old, no changes made");
             } else {
                 temp.setResponse(response);
-                System.out.println("New response recorded");
+                System.out.println("Response recorded");
             }
         }
     }
@@ -136,7 +143,7 @@ public class GuestList {
         if (temp == null) {
             System.out.println("Guest not on list");
         } else {
-            System.out.println("Company: " + temp.getCompany());
+            System.out.println("\nCompany: " + temp.getCompany());
             for (Guest i : guests) {
                 if (i.getCompany().equals(temp.getCompany())) {
                     System.out.println(i.toString());
@@ -148,26 +155,40 @@ public class GuestList {
     // Print guest list
     public void printList() {
         for (Guest i : guests) {
-            System.out.println("\n" + i.toString());
+            System.out.println(i.toString());
         }
     }
 
     // Command Chooser
     public void runStuff(char input) throws IOException {
+        Guest temp;
         if (input == 'G') {
-            System.out.println(binarySearchRunner(enterGuestName()).toString());
+            temp = binarySearch(enterGuestName());
+            // TODO put this in binary search method
+            if (temp != null) {
+                System.out.println(temp.toString());
+            } else {
+                System.out.println("Guest Not on List");
+            }
         } else if (input == 'L') {
             printList();
         } else if (input == 'N') {
             guestNumbers();
         } else if (input == 'A') {
-            Guest temp = enterGuestName();
+            temp = enterGuestName();
+            changeCompany(temp);
             changeResponse(temp);
             addGuest(temp);
         } else if (input == 'R') {
-            changeResponse(enterGuestName());
+            temp = binarySearch(enterGuestName());
+            String response = temp.getResponse();
+            if (response.equals("?")) {
+                response = "maybe";
+            }
+            System.out.println("Old Response: " + response);
+            changeResponse(binarySearch(enterGuestName()));
         } else if (input == 'C') {
-            findColleagues(enterGuestName());
+            findColleagues(binarySearch(enterGuestName()));
         } else {
             System.out.println("Not a command, try again");
         }
@@ -178,12 +199,12 @@ public class GuestList {
         list.readFile();
         list.insertionSort();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Commands: \nG: Guest Information\nL: List Guests\nN: Number of Guests\nA: Add a Guest\nR: Change a Response\nC: Display a Guest's Colleagues\nQ: Quit");
-        System.out.print("Enter a Command: ");
+        System.out.println("\nCommands: \nG: Find a Guest\nL: List Guests\nN: Number of Guests\nA: Add a Guest\nR: Change a Response\nC: Display a Guest's Colleagues\nQ: Quit");
+        System.out.print("\nEnter a Command: ");
         char input = in.readLine().toUpperCase().charAt(0);
         while (input != 'Q') {
             list.runStuff(input);
-            System.out.print("Enter a Command: ");
+            System.out.print("\nEnter a Command: ");
             input = in.readLine().toUpperCase().charAt(0);
         }
         list.printList();
