@@ -155,12 +155,22 @@ public class GuestList {
     // Command Chooser
     public void runStuff(char input) throws IOException {
         Guest temp;
-        if (input == 'G') {
+        if (input == 'G' || input == 'R' || input == 'C') {
+            // Kind of a convoluted setup, to avoid putting if(temp==null) multiple times in G R and C
             temp = binarySearch(enterGuestName());
             if (temp == null) {
                 System.out.println("Guest Not on List");
-            } else {
+            } else if (input == 'G') {
                 System.out.println(temp.toString());
+            } else if (input == 'R') {
+                String response = temp.getResponse();
+                if (response.equals("?")) {
+                    response = "maybe";
+                }
+                System.out.println("Old Response: " + response);
+                changeResponse(temp);
+            } else {
+                findColleagues(temp);
             }
         } else if (input == 'L') {
             printList();
@@ -171,25 +181,6 @@ public class GuestList {
             changeCompany(temp);
             changeResponse(temp);
             addGuest(temp);
-        } else if (input == 'R') {
-            temp = binarySearch(enterGuestName());
-            if (temp == null) {
-                System.out.println("Guest not on list");
-            } else {
-                String response = temp.getResponse();
-                if (response.equals("?")) {
-                    response = "maybe";
-                }
-                System.out.println("Old Response: " + response);
-                changeResponse(temp);
-            }
-        } else if (input == 'C') {
-            temp = binarySearch(enterGuestName());
-            if (temp == null) {
-                System.out.println("Guest not on list");
-            } else {
-                findColleagues(binarySearch(enterGuestName()));
-            }
         } else {
             System.out.println("Not a command, try again");
         }
