@@ -75,16 +75,15 @@ public class GuestList {
     // ADD GUEST - puts in sorted position
     public void addGuest(Guest newGuest) {
         if (binarySearch(newGuest) == null) {
-            int posIndex = 0;
-            while (posIndex < guests.size() && newGuest.compareGuests(guests.get(posIndex + 1)) < 0) {
-                posIndex++;
+            int posIndex = guests.size();
+            while (posIndex > 0 && newGuest.compareGuests(guests.get(posIndex - 1)) < 0) {
+                posIndex--;
             }
             guests.add(posIndex, newGuest);
             System.out.println("Guest Added");
         } else {
-            System.out.println("Guest already on List" + guests.get(guests.indexOf(newGuest)).toString());
+            System.out.println("Guest already on List");
         }
-
     }
 
     // FUNCTIONS
@@ -131,7 +130,6 @@ public class GuestList {
             System.out.println("New response same as old, no changes made");
         } else {
             temp.setResponse(response);
-            System.out.println("Response recorded");
         }
     }
 
@@ -159,7 +157,7 @@ public class GuestList {
             // Kind of a convoluted setup, to avoid putting if(temp==null) multiple times in G R and C
             temp = binarySearch(enterGuestName());
             if (temp == null) {
-                System.out.println("Guest Not on List");
+                System.out.println("\nGuest Not on List");
             } else if (input == 'G') {
                 System.out.println(temp.toString());
             } else if (input == 'R') {
@@ -169,6 +167,7 @@ public class GuestList {
                 }
                 System.out.println("Old Response: " + response);
                 changeResponse(temp);
+                System.out.println("Response recorded");
             } else {
                 findColleagues(temp);
             }
@@ -199,7 +198,732 @@ public class GuestList {
             System.out.print("\nEnter a Command: ");
             input = in.readLine().toUpperCase().charAt(0);
         }
-        list.printList();
+        System.out.println("Program Complete, Quitting");
     }
 
 }
+
+/*
+Enter relative path of file: GuestList.txt
+
+Reading File...
+
+Reading Complete.
+
+Commands:
+G: Find a Guest
+L: List Guests
+N: Number of Guests
+A: Add a Guest
+R: Change a Response
+C: Display a Guest's Colleagues
+Q: Quit
+
+Enter a Command: L
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Name: Field, Zoe
+Company: APL
+Response: maybe
+
+Name: Geek, Ima
+Company: DGT
+Response: no
+
+Name: Guest, Sally
+Company: DGT
+Response: no
+
+Name: Guest, Zoe
+Company: APL
+Response: yes
+
+Name: Keys, Qwerty
+Company: IBM
+Response: no
+
+Name: Kulate, Cal
+Company: DGT
+Response: no
+
+Name: List, Linc
+Company: APL
+Response: yes
+
+Name: Nerd, Ura
+Company: IBM
+Response: ?R
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Name: Queue, Suzy
+Company: IBM
+Response: no
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Enter a Command: G
+Enter the first name of a guest: Ima
+Enter the last name of a guest: Geek
+
+Name: Geek, Ima
+Company: DGT
+Response: no
+
+Enter a Command: G
+Enter the first name of a guest: Pointoa
+Enter the last name of a guest: List
+
+Guest Not on List
+
+Enter a Command: G
+Enter the first name of a guest: Closda
+Enter the last name of a guest: Windoes
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Enter a Command: N
+Number of guests attending: 3
+Number of guests not attending: 6
+Number of guests without response: 5
+
+Enter a Command: G
+Enter the first name of a guest: Electromagnetic
+Enter the last name of a guest: Field
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Enter a Command: G
+Enter the first name of a guest: Olivia
+Enter the last name of a guest: Apple
+
+Guest Not on List
+
+Enter a Command: G
+Enter the first name of a guest: Asdfgh
+Enter the last name of a guest: Keys
+
+Guest Not on List
+
+Enter a Command: G
+Enter the first name of a guest: John
+Enter the last name of a guest: Pappoudoupolivsky
+
+Guest Not on List
+
+Enter a Command: G
+Enter the first name of a guest: Sally
+Enter the last name of a guest: Field
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Enter a Command: G
+Enter the first name of a guest: April
+Enter the last name of a guest: Field
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Enter a Command: G
+Enter the first name of a guest: Ima
+Enter the last name of a guest: Guest
+
+Guest Not on List
+
+Enter a Command: X
+Not a command, try again
+
+Enter a Command: Y
+Not a command, try again
+
+Enter a Command: Z
+Not a command, try again
+
+Enter a Command: L
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Name: Field, Zoe
+Company: APL
+Response: maybe
+
+Name: Geek, Ima
+Company: DGT
+Response: no
+
+Name: Guest, Sally
+Company: DGT
+Response: no
+
+Name: Guest, Zoe
+Company: APL
+Response: yes
+
+Name: Keys, Qwerty
+Company: IBM
+Response: no
+
+Name: Kulate, Cal
+Company: DGT
+Response: no
+
+Name: List, Linc
+Company: APL
+Response: yes
+
+Name: Nerd, Ura
+Company: IBM
+Response: ?R
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Name: Queue, Suzy
+Company: IBM
+Response: no
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Enter a Command: G
+Enter the first name of a guest: Blaise
+Enter the last name of a guest: Pascal
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Enter a Command: A
+Enter the first name of a guest: Suzy
+Enter the last name of a guest: Queue
+Enter a company: IBM
+Enter response: no
+Guest already on List
+
+Enter a Command: A
+Enter the first name of a guest: Asdfgh
+Enter the last name of a guest: Keys
+Enter a company: DGT
+Enter response: yes
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Mike
+Enter the last name of a guest: Rochip
+Enter a company: DGT
+Enter response: ?
+Guest Added
+
+Enter a Command: R
+Enter the first name of a guest: Ima
+Enter the last name of a guest: Geek
+Old Response: no
+Enter response: yes
+Response recorded
+
+Enter a Command: A
+Enter the first name of a guest: Amy
+Enter the last name of a guest: Rochip
+Enter a company: IBM
+Enter response: ?
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Didja
+Enter the last name of a guest: Windoes
+Enter a company: APL
+Enter response: yes
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Data
+Enter the last name of a guest: Field
+Enter a company: APL
+Enter response: no
+Guest Added
+
+Enter a Command: R
+Enter the first name of a guest: Seymour
+Enter the last name of a guest: Math
+
+Guest Not on List
+
+Enter a Command: R
+Enter the first name of a guest: Elena
+Enter the last name of a guest: Zaitsoff
+
+Guest Not on List
+
+Enter a Command: A
+Enter the first name of a guest: Howard
+Enter the last name of a guest: Yadoing
+Enter a company: DGT
+Enter response: no
+Guest Added
+
+Enter a Command: R
+Enter the first name of a guest: Asdfgh
+Enter the last name of a guest: Keys
+Old Response: yes
+Enter response: no
+Response recorded
+
+Enter a Command: R
+Enter the first name of a guest: Mike
+Enter the last name of a guest: Rochip
+Old Response: maybe
+Enter response: ?
+New response same as old, no changes made
+Response recorded
+
+Enter a Command: R
+Enter the first name of a guest: Alice
+Enter the last name of a guest: Ardvaark
+
+Guest Not on List
+
+Enter a Command: A
+Enter the first name of a guest: Alice
+Enter the last name of a guest: Ardvaark
+Enter a company: IBM
+Enter response: yes
+Guest Added
+
+Enter a Command: G
+Enter the first name of a guest: Amy
+Enter the last name of a guest: Rochip
+
+Name: Rochip, Amy
+Company: IBM
+Response: maybe
+
+Enter a Command: G
+Enter the first name of a guest: Beth
+Enter the last name of a guest: Yerrmoniesworth
+
+Guest Not on List
+
+Enter a Command: L
+
+Name: Ardvaark, Alice
+Company: IBM
+Response: yes
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Name: Field, Data
+Company: APL
+Response: no
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Name: Field, Zoe
+Company: APL
+Response: maybe
+
+Name: Geek, Ima
+Company: DGT
+Response: yes
+
+Name: Guest, Sally
+Company: DGT
+Response: no
+
+Name: Guest, Zoe
+Company: APL
+Response: yes
+
+Name: Keys, Asdfgh
+Company: DGT
+Response: no
+
+Name: Keys, Qwerty
+Company: IBM
+Response: no
+
+Name: Kulate, Cal
+Company: DGT
+Response: no
+
+Name: List, Linc
+Company: APL
+Response: yes
+
+Name: Nerd, Ura
+Company: IBM
+Response: ?R
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Name: Queue, Suzy
+Company: IBM
+Response: no
+
+Name: Rochip, Amy
+Company: IBM
+Response: maybe
+
+Name: Rochip, Mike
+Company: DGT
+Response: maybe
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Name: Windoes, Didja
+Company: APL
+Response: yes
+
+Name: Yadoing, Howard
+Company: DGT
+Response: no
+
+Enter a Command: A
+Enter the first name of a guest: Data
+Enter the last name of a guest: Field
+Enter a company: APL
+Enter response: no
+Guest already on List
+
+Enter a Command: A
+Enter the first name of a guest: Genevieve
+Enter the last name of a guest: Stapos
+Enter a company: DGT
+Enter response: yes
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Abe
+Enter the last name of a guest: Ardvaark
+Enter a company: IBM
+Enter response: ?
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Doyour
+Enter the last name of a guest: Math
+Enter a company: DGT
+Enter response: ?
+Guest Added
+
+Enter a Command: A
+Enter the first name of a guest: Iluv
+Enter the last name of a guest: Math
+Enter a company: DGT
+Enter response: yes
+Guest Added
+
+Enter a Command: C
+Enter the first name of a guest: Cal
+Enter the last name of a guest: Kulate
+
+Company: DGT
+
+Name: Geek, Ima
+Company: DGT
+Response: yes
+
+Name: Guest, Sally
+Company: DGT
+Response: no
+
+Name: Keys, Asdfgh
+Company: DGT
+Response: no
+
+Name: Kulate, Cal
+Company: DGT
+Response: no
+
+Name: Math, Doyour
+Company: DGT
+Response: maybe
+
+Name: Math, Iluv
+Company: DGT
+Response: yes
+
+Name: Rochip, Mike
+Company: DGT
+Response: maybe
+
+Name: Stapos, Genevieve
+Company: DGT
+Response: yes
+
+Name: Yadoing, Howard
+Company: DGT
+Response: no
+
+Enter a Command: C
+Enter the first name of a guest: Linc
+Enter the last name of a guest: List
+
+Company: APL
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Name: Field, Data
+Company: APL
+Response: no
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Name: Field, Zoe
+Company: APL
+Response: maybe
+
+Name: Guest, Zoe
+Company: APL
+Response: yes
+
+Name: List, Linc
+Company: APL
+Response: yes
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Name: Windoes, Didja
+Company: APL
+Response: yes
+
+Enter a Command: C
+Enter the first name of a guest: Alice
+Enter the last name of a guest: Ardvaark
+
+Company: IBM
+
+Name: Ardvaark, Abe
+Company: IBM
+Response: maybe
+
+Name: Ardvaark, Alice
+Company: IBM
+Response: yes
+
+Name: Keys, Qwerty
+Company: IBM
+Response: no
+
+Name: Nerd, Ura
+Company: IBM
+Response: ?R
+
+Name: Queue, Suzy
+Company: IBM
+Response: no
+
+Name: Rochip, Amy
+Company: IBM
+Response: maybe
+
+Enter a Command: A
+Enter the first name of a guest: Sally
+Enter the last name of a guest: Pascal
+Enter a company: FCA
+Enter response: yes
+Guest Added
+
+Enter a Command: G
+Enter the first name of a guest: Sally
+Enter the last name of a guest: Pascal
+
+Name: Pascal, Sally
+Company: FCA
+Response: yes
+
+Enter a Command: C
+Enter the first name of a guest: Sally
+Enter the last name of a guest: Pascal
+
+Company: FCA
+
+Name: Pascal, Sally
+Company: FCA
+Response: yes
+
+Enter a Command: G
+Enter the first name of a guest: Blaise
+Enter the last name of a guest: Field
+
+Guest Not on List
+
+Enter a Command: C
+Enter the first name of a guest: Jane
+Enter the last name of a guest: Doe
+
+Guest Not on List
+
+Enter a Command: N
+Number of guests attending: 9
+Number of guests not attending: 8
+Number of guests without response: 9
+
+Enter a Command: L
+
+Name: Ardvaark, Abe
+Company: IBM
+Response: maybe
+
+Name: Ardvaark, Alice
+Company: IBM
+Response: yes
+
+Name: Field, April
+Company: APL
+Response: maybe
+
+Name: Field, Data
+Company: APL
+Response: no
+
+Name: Field, Electromagnetic
+Company: APL
+Response: maybe
+
+Name: Field, Sally
+Company: APL
+Response: maybe
+
+Name: Field, Zoe
+Company: APL
+Response: maybe
+
+Name: Geek, Ima
+Company: DGT
+Response: yes
+
+Name: Guest, Sally
+Company: DGT
+Response: no
+
+Name: Guest, Zoe
+Company: APL
+Response: yes
+
+Name: Keys, Asdfgh
+Company: DGT
+Response: no
+
+Name: Keys, Qwerty
+Company: IBM
+Response: no
+
+Name: Kulate, Cal
+Company: DGT
+Response: no
+
+Name: List, Linc
+Company: APL
+Response: yes
+
+Name: Math, Doyour
+Company: DGT
+Response: maybe
+
+Name: Math, Iluv
+Company: DGT
+Response: yes
+
+Name: Nerd, Ura
+Company: IBM
+Response: ?R
+
+Name: Pascal, Blaise
+Company: APL
+Response: no
+
+Name: Pascal, Sally
+Company: FCA
+Response: yes
+
+Name: Queue, Suzy
+Company: IBM
+Response: no
+
+Name: Rochip, Amy
+Company: IBM
+Response: maybe
+
+Name: Rochip, Mike
+Company: DGT
+Response: maybe
+
+Name: Stapos, Genevieve
+Company: DGT
+Response: yes
+
+Name: Windoes, Closda
+Company: APL
+Response: yes
+
+Name: Windoes, Didja
+Company: APL
+Response: yes
+
+Name: Yadoing, Howard
+Company: DGT
+Response: no
+
+Enter a Command: Q
+Program Complete, Quitting
+ */
