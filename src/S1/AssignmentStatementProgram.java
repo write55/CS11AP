@@ -1,4 +1,4 @@
-
+package S1;
 // Aaron Wu
 
 public class AssignmentStatementProgram {

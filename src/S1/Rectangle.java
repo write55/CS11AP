@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 /* Aaron Wu
  * 10/18/18
  * This program allows the user to enter dimensions for a rectangle, and then prints out that rectangle.

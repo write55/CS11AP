@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 // Aaron Wu
 // 9/14/18
 // Program to randomly generate two (x,y) points with values ranging from -10 to 10, then calculate the distance between them

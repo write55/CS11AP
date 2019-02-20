@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 // Aaron Wu
 // 9/24/18
 // Program to add, subtract, multiply, and divide fractions, using methods and objects

@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 // Aaron Wu
 // 9/28/18
 // Program taxes input from the user creates a "Javaland" object to store the income.

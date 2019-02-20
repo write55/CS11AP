@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 // Aaron Wu
 
 import java.util.Scanner;

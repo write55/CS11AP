@@ -1,4 +1,4 @@
-package Semester1;
+package S1;
 /*
 Aaron Wu
 10/22/18
