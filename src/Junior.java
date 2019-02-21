@@ -12,6 +12,14 @@ public class Junior extends HSStudent {
 		keystoneScore = ks;
 	}
 
+	public String getKeystoneScore() {
+		return keystoneScore;
+	}
+
+	public void setKeystoneScore(String kss) {
+		keystoneScore = kss;
+	}
+
 	public String convertGrade(int input) {
 		if (input == 11) {
 			return "Junior";

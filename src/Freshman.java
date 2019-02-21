@@ -12,6 +12,14 @@ public class Freshman extends HSStudent {
 		referrals = r;
 	}
 
+	public int getReferrals() {
+		return referrals;
+	}
+
+	public void setReferrals(int r) {
+		referrals = r;
+	}
+
 	public String convertGrade(int input) {
 		if (input == 9) {
 			return "Freshman";

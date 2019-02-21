@@ -14,6 +14,22 @@ public class Senior extends HSStudent {
 		fines = f;
 	}
 
+	public boolean getPortfolioDone() {
+		return portfolioDone;
+	}
+
+	public double getFines() {
+		return fines;
+	}
+
+	public void setPortfolioDone(boolean pd) {
+		portfolioDone = pd;
+	}
+
+	public void setFines(double f) {
+		fines = f;
+	}
+
 	public String convertGrade(int input) {
 		if (input == 12) {
 			return "Senior";
