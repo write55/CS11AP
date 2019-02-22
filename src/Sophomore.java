@@ -30,7 +30,7 @@ public class Sophomore extends HSStudent {
 
 	public String toString() {
 		String gradeOut = Double.toString(Math.round(mathGrade * 100.0) / 100.0);
-		return super.toString() + "Math Grade Freshman Year: " + gradeOut;
+		return super.toString() + "\nMath Grade Freshman Year: " + gradeOut;
 
 	}
 

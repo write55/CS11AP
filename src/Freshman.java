@@ -29,7 +29,7 @@ public class Freshman extends HSStudent {
 	}
 
 	public String toString() {
-		return super.toString() + "\nDiscipline Referrals in Middle School; " + referrals;
+		return super.toString() + "\nDiscipline Referrals in Middle School: " + referrals;
 	}
 
 }

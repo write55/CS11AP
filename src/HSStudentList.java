@@ -47,7 +47,7 @@ public class HSStudentList {
             } else if (gl == 11) {
                 String keystone = st.nextToken();
                 if (st.hasMoreTokens()) {
-                    keystone += st.nextToken();
+                    keystone += " " + st.nextToken();
                     // for "Below Basic"
                 }
                 temp = new Junior(fn, ln, gl, qpa, keystone);

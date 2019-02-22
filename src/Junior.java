@@ -29,6 +29,6 @@ public class Junior extends HSStudent {
 	}
 
 	public String toString() {
-		return super.toString() + "Algebra Keystone Score: " + keystoneScore;
+		return super.toString() + "\nAlgebra Keystone Score: " + keystoneScore;
 	}
 }

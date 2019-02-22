@@ -70,7 +70,7 @@ public abstract class HSStudent implements Student, Comparable<HSStudent> {
 	public abstract String convertGrade(int input);
 
 	public String toString() {
-		return "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "Grade" + convertGrade(grade) + "QPA: "
+		return "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nGrade: " + convertGrade(grade) + "\nQPA: "
 				+ qpa;
 	}
 }

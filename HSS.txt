@@ -1,0 +1,6 @@
+FirstName LastName 11 3.18 Below Basic
+Aaron Wu 11 4.0 Literally Zero
+Jorgen Wu 12 3.9 false 200000000
+Yoshikage Kira 10 4.0 F
+Jotaro Kujo 9 1.0 100000000
+Joseph Joestar 12 4.0 true 0
