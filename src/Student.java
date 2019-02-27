@@ -1,16 +1,16 @@
 
 public interface Student {
 
-	void setFirstName(String firstName);
+    void setFirstName(String firstName);
 
-	void setLastName(String lastName);
+    void setLastName(String lastName);
 
-	void setGrade(int grade);
+    void setGrade(int grade);
 
-	String getFirstName();
+    String getFirstName();
 
-	String getLastName();
+    String getLastName();
 
-	int getGrade();
+    int getGrade();
 
 }

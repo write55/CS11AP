@@ -1,7 +1,7 @@
-
 /*
 Aaron Wu
 2/21/19
+ArrayList of HSStudent objects and sub-objects
  */
 
 import java.io.BufferedReader;
@@ -54,8 +54,8 @@ public class HSStudentList {
                 // Next token is string for keystone grade
             } else {
                 String test = st.nextToken().toLowerCase();
-                boolean portfoliodone = test.equals("true") || test.equals("yes") || test.equals("done");
-                temp = new Senior(fn, ln, gl, qpa, portfoliodone, Double.parseDouble(st.nextToken()));
+                boolean portfolioDone = test.equals("true") || test.equals("yes") || test.equals("done");
+                temp = new Senior(fn, ln, gl, qpa, portfolioDone, Double.parseDouble(st.nextToken()));
                 // Next tokens are boolean for portfolio done and school fines
             }
             students.add(temp);
