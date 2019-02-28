@@ -27,7 +27,7 @@ public class HSStudentList {
             input = inFile.readLine();
         }
         inFile.close();
-        System.out.println("\nReading Complete.\n");
+        System.out.println("Reading Complete.\n");
     }
 
     private void tokenizeString(String input) {
@@ -43,7 +43,7 @@ public class HSStudentList {
                 // Next token is int for referrals
             } else if (gl == 10) {
                 temp = new Sophomore(fn, ln, gl, qpa, st.nextToken().toUpperCase().charAt(0));
-                // Next token is double for math grade
+                // Next token is char for math grade
             } else if (gl == 11) {
                 String keystone = st.nextToken();
                 if (st.hasMoreTokens()) {
@@ -86,9 +86,93 @@ public class HSStudentList {
         HSStudentList list = new HSStudentList();
         list.readFile();
         list.insertionSort();
-        System.out.println("Sorted List:\n");
+        System.out.println("Sorted List:");
         list.printList();
         System.out.println("\nProgram Complete.");
     }
 
 }
+
+/*
+OUTPUT
+
+Enter relative path of file: HSS.txt
+
+Reading File...
+
+Reading Complete.
+
+Sorted List:
+
+First Name: Aname
+Last Name: Whatever
+Grade: Freshman
+QPA: 1.0
+Discipline Referrals in Middle School: 1000
+
+First Name: Bname
+Last Name: Whatever
+Grade: Freshman
+QPA: 4.0
+Discipline Referrals in Middle School: 10
+
+First Name: Cname
+Last Name: Whatever
+Grade: Freshman
+QPA: 2.1
+Discipline Referrals in Middle School: 0
+
+First Name: AAaaayyyyy
+Last Name: Aaaaaaaaaaaay
+Grade: Sophomore
+QPA: 4.0
+Math Grade Freshman Year: F
+
+First Name: BBBBBBBB
+Last Name: Aaaaaaaaaz
+Grade: Sophomore
+QPA: 4.0
+Math Grade Freshman Year: A
+
+First Name: Adolph
+Last Name: Wolfeschlegelsteinhausenbergerdorff
+Grade: Sophomore
+QPA: 4.0
+Math Grade Freshman Year: C
+
+First Name: FirstName
+Last Name: LastName
+Grade: Junior
+QPA: 3.18
+Algebra Keystone Score: Below Basic
+
+First Name: Aaron
+Last Name: Wu
+Grade: Junior
+QPA: 0.0
+Algebra Keystone Score: Below Basic
+
+First Name: Witu
+Last Name: Low
+Grade: Senior
+QPA: 4.0
+Portfolio Complete: true
+Fines: $0.0
+
+First Name: Sumting
+Last Name: Wong
+Grade: Senior
+QPA: 4.0
+Portfolio Complete: true
+Fines: $12.0
+
+First Name: Jorgen
+Last Name: Wu
+Grade: Senior
+QPA: 1.0
+Portfolio Complete: false
+Fines: $2.0E9
+
+Program Complete.
+
+ */
