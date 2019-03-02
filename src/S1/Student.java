@@ -2,8 +2,8 @@ package S1;
 /*
 Aaron Wu
 12/12/18
-Student class, contains constants for courses and codes
-Private data: Student id, score, course taken (code)
+S2.Student class, contains constants for courses and codes
+Private data: S2.Student id, score, course taken (code)
  */
 
 public class Student {

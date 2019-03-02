@@ -198,7 +198,7 @@ public class StudentArray {
 		System.out.println("F: " + ((int) (((double) grades[4] / total) * 1000 + .5) / 10.0) + "%");
 	}
 
-	// Prints array, "arrayToString" to distinguish from toString in Student
+	// Prints array, "arrayToString" to distinguish from toString in S2.Student
 	public void arrayToString() {
 		for (int i = 0; i < filled; i++) {
 			System.out.println("\n" + array[i].toString());

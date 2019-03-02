@@ -1,7 +1,7 @@
-/*
+package S2;/*
 Aaron Wu
 2/21/19
-Abstract Class for HSStudent, will be implemented with four grade levels
+Abstract Class for S2.HSStudent, will be implemented with four grade levels
  */
 
 public abstract class HSStudent implements Student, Comparable<HSStudent> {

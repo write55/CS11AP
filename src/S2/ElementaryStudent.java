@@ -1,3 +1,4 @@
+package S2;
 
 public abstract class ElementaryStudent implements Student {
 

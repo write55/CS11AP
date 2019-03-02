@@ -1,7 +1,7 @@
-/*
+package S2;/*
 Aaron Wu
 2/21/19
-ArrayList of HSStudent objects and sub-objects
+ArrayList of S2.HSStudent objects and sub-objects
  */
 
 import java.io.BufferedReader;
@@ -106,69 +106,69 @@ Sorted List:
 
 First Name: Aname
 Last Name: Whatever
-Grade: Freshman
+Grade: S2.Freshman
 QPA: 1.0
 Discipline Referrals in Middle School: 1000
 
 First Name: Bname
 Last Name: Whatever
-Grade: Freshman
+Grade: S2.Freshman
 QPA: 4.0
 Discipline Referrals in Middle School: 10
 
 First Name: Cname
 Last Name: Whatever
-Grade: Freshman
+Grade: S2.Freshman
 QPA: 2.1
 Discipline Referrals in Middle School: 0
 
 First Name: AAaaayyyyy
 Last Name: Aaaaaaaaaaaay
-Grade: Sophomore
+Grade: S2.Sophomore
 QPA: 4.0
-Math Grade Freshman Year: F
+Math Grade S2.Freshman Year: F
 
 First Name: BBBBBBBB
 Last Name: Aaaaaaaaaz
-Grade: Sophomore
+Grade: S2.Sophomore
 QPA: 4.0
-Math Grade Freshman Year: A
+Math Grade S2.Freshman Year: A
 
 First Name: Adolph
 Last Name: Wolfeschlegelsteinhausenbergerdorff
-Grade: Sophomore
+Grade: S2.Sophomore
 QPA: 4.0
-Math Grade Freshman Year: C
+Math Grade S2.Freshman Year: C
 
 First Name: FirstName
 Last Name: LastName
-Grade: Junior
+Grade: S2.Junior
 QPA: 3.18
 Algebra Keystone Score: Below Basic
 
 First Name: Aaron
 Last Name: Wu
-Grade: Junior
+Grade: S2.Junior
 QPA: 0.0
 Algebra Keystone Score: Below Basic
 
 First Name: Witu
 Last Name: Low
-Grade: Senior
+Grade: S2.Senior
 QPA: 4.0
 Portfolio Complete: true
 Fines: $0.0
 
 First Name: Sumting
 Last Name: Wong
-Grade: Senior
+Grade: S2.Senior
 QPA: 4.0
 Portfolio Complete: true
 Fines: $12.0
 
 First Name: Jorgen
 Last Name: Wu
-Grade: Senior
+Grade: S2.Senior
 QPA: 1.0
 Portfolio Complete: false
 Fines: $2.0E9

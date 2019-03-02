@@ -1,3 +1,4 @@
+package S2;
 
 public class Sophomore extends HSStudent {
 
@@ -22,14 +23,14 @@ public class Sophomore extends HSStudent {
 
     public String convertGrade(int input) {
         if (input == 10) {
-            return "Sophomore";
+            return "S2.Sophomore";
         } else {
             return Integer.toString(input);
         }
     }
 
     public String toString() {
-        return super.toString() + "\nMath Grade Freshman Year: " + mathGrade;
+        return super.toString() + "\nMath Grade S2.Freshman Year: " + mathGrade;
 
     }
 

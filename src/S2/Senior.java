@@ -1,3 +1,4 @@
+package S2;
 
 public class Senior extends HSStudent {
 
@@ -32,7 +33,7 @@ public class Senior extends HSStudent {
 
     public String convertGrade(int input) {
         if (input == 12) {
-            return "Senior";
+            return "S2.Senior";
         } else {
             return Integer.toString(input);
         }
