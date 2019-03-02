@@ -19,12 +19,14 @@ public class DeckTester {
         String[] suits2 = {"Diamonds", "Spades"};
         int[] points2 = {2, 3, 4, 5, 11};
         Deck d2 = new Deck(ranks2, suits2, points2);
-        d2.deal();
-        d2.deal();
-        d2.deal();
-        System.out.println(d2.toString());
+        Card first = d2.deal();
+        Card second = d2.deal();
+        Card third = d2.deal();
+        System.out.println(first.toString() + second.toString() + third.toString() + "\n" + d2.toString());
 
-
+        Deck d3 = new Deck(ranks2, suits1, points2);
+        Card fourth = d3.deal();
+        System.out.println(fourth.toString() + "\n" + d3.toString());
     }
 
 }
