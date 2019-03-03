@@ -9,12 +9,14 @@ public class DeckTester {
      * @param args is not used.
      */
     public static void main(String[] args) {
+        System.out.println("Deck 1");
         String[] ranks1 = {"jack", "queen", "king"};
         String[] suits1 = {"blue", "red"};
         int[] points1 = {11, 12, 13};
         Deck d = new Deck(ranks1, suits1, points1);
         System.out.println(d.toString());
 
+        System.out.println("Deck 2");
         String[] ranks2 = {"2", "3", "4", "5", "Ace"};
         String[] suits2 = {"Diamonds", "Spades"};
         int[] points2 = {2, 3, 4, 5, 11};
@@ -24,6 +26,7 @@ public class DeckTester {
         Card third = d2.deal();
         System.out.println(first.toString() + second.toString() + third.toString() + "\n" + d2.toString());
 
+        System.out.println("Deck 3");
         Deck d3 = new Deck(ranks2, suits1, points2);
         Card fourth = d3.deal();
         System.out.println(fourth.toString() + "\n" + d3.toString());
