@@ -28,7 +28,7 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        cards = new ArrayList<>();
+        cards = new ArrayList<Card>();
         for (int i = 0; i < suits.length; i++) {
             for (int j = 0; j < ranks.length; j++) {
                 cards.add(new Card(ranks[j], suits[i], values[j]));
@@ -71,10 +71,11 @@ public class Deck {
      * previously dealt.
      */
     public Card deal() {
-        // will deal with keeping size in bounds when running method
-        Card output = cards.get(size - 1);
-        size--;
-        return output;
+        if (size > 0) {
+            Card output = cards.get(size - 1);
+            size--;
+            return output;
+        } else return null;
     }
 
     /**
