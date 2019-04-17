@@ -1,8 +1,10 @@
+package S2;
+
 import java.util.List;
 import java.util.ArrayList;
 
 /**
- * The Deck class represents a shuffled deck of cards. It provides several
+ * The S2.Deck class represents a shuffled deck of cards. It provides several
  * operations including initialize, shuffle, deal, and check if empty.
  */
 public class Deck {
@@ -19,7 +21,7 @@ public class Deck {
     private int size;
 
     /**
-     * Creates a new <code>Deck</code> instance.<BR>
+     * Creates a new <code>S2.Deck</code> instance.<BR>
      * It pairs each element of ranks with each element of suits, and produces
      * one of the corresponding card.
      *

@@ -1,8 +1,9 @@
+package S2;
+
 import java.util.List;
-import java.util.ArrayList;
 
 /**
- * The ElevensBoard class represents the board in a game of Elevens.
+ * The S2.ElevensBoard class represents the board in a game of Elevens.
  */
 public class ElevensBoard extends Board {
 
@@ -33,7 +34,7 @@ public class ElevensBoard extends Board {
     private static final boolean I_AM_DEBUGGING = false;
 
     /**
-     * Creates a new <code>ElevensBoard</code> instance.
+     * Creates a new <code>S2.ElevensBoard</code> instance.
      */
     public ElevensBoard() {
         super(BOARD_SIZE, RANKS, SUITS, POINT_VALUES);

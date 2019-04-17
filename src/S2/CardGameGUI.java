@@ -1,3 +1,5 @@
+package S2;
+
 import java.awt.Point;
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -83,7 +85,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
     private static final int LABEL_HEIGHT_INC = 35;
 
     /**
-     * The board (Board subclass).
+     * The board (S2.Board subclass).
      */
     private Board board;
 
@@ -140,7 +142,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
     /**
      * Initialize the GUI.
      *
-     * @param gameBoard is a <code>Board</code> subclass.
+     * @param gameBoard is a <code>S2.Board</code> subclass.
      */
     public CardGameGUI(Board gameBoard) {
         board = gameBoard;
@@ -190,7 +192,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
                 displayCards[k].setIcon(icon);
                 displayCards[k].setVisible(true);
             } else {
-                throw new RuntimeException("Card image not found: \"" + cardImageFileName + "\"");
+                throw new RuntimeException("S2.Card image not found: \"" + cardImageFileName + "\"");
             }
         }
         statusMsg.setText(board.deckSize() + " undealt cards remain.");
@@ -212,12 +214,12 @@ public class CardGameGUI extends JFrame implements ActionListener {
         };
 
         // If board object's class name follows the standard format
-        // of ...Board or ...board, use the prefix for the JFrame title
+        // of ...S2.Board or ...board, use the prefix for the JFrame title
         String className = board.getClass().getSimpleName();
         int classNameLen = className.length();
-        int boardLen = "Board".length();
+        int boardLen = "S2.Board".length();
         String boardStr = className.substring(classNameLen - boardLen);
-        if (boardStr.equals("Board") || boardStr.equals("board")) {
+        if (boardStr.equals("S2.Board") || boardStr.equals("board")) {
             int titleLength = classNameLen - boardLen;
             setTitle(className.substring(0, titleLength));
         }
@@ -301,7 +303,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
      * "aceclubs.GIF" or "8heartsS.GIF". The "S" indicates that the card is
      * selected.
      *
-     * @param c          Card to get the image for
+     * @param c          S2.Card to get the image for
      * @param isSelected flag that indicates if the card is selected
      * @return String representation of the image
      */

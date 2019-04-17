@@ -1,10 +1,12 @@
+package S2;
+
 /**
- * This is a class that tests the Card class.
+ * This is a class that tests the S2.Card class.
  */
 public class CardTester {
 
     /**
-     * The main method in this class checks the Card operations for consistency.
+     * The main method in this class checks the S2.Card operations for consistency.
      *
      * @param args is not used.
      */
