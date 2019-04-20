@@ -15,7 +15,7 @@ public class CatNMouse {
     private ArrayList<ArrayList<Character>> maze;
     private int w; // width
     private int h; // height
-    private boolean found;
+    private boolean found = false;
 
     public CatNMouse() {
         maze = new ArrayList<ArrayList<Character>>();
@@ -45,6 +45,15 @@ public class CatNMouse {
         maze.add(temp);
     }
 
+    // Cat always in first row, returns column location
+    public int findCat() {
+        int out = 0;
+        while (!maze.get(0).get(out).equals('C')) {
+            out++;
+        }
+        return out;
+    }
+
     public boolean getFound() {
         return found;
     }
@@ -53,7 +62,11 @@ public class CatNMouse {
         StringBuilder out = new StringBuilder();
         for (ArrayList<Character> i : maze) {
             for (Character j : i) {
-                out.append(j);
+                if (j == '1') {
+                    out.append(' ');
+                } else {
+                    out.append(j);
+                }
             }
             out.append("\n");
         }
@@ -62,40 +75,46 @@ public class CatNMouse {
 
     public void printResult() {
         if (found) {
-            System.out.print("The cat found the mouse in this ");
+            System.out.println("The cat found the mouse in this " + w + " x " + h + " maze");
+            System.out.println(toString());
         } else {
-            System.out.print("The cat was unable to find the mouse in this ");
+            System.out.println("The cat was unable to find the mouse in this " + w + " x " + h + " maze");
         }
-        System.out.println(w + " x " + h + " maze");
-        System.out.println(toString());
     }
+
 
     public boolean inBounds(int x, int y) {
         return x < w && x > -1 && y < h && y > -1;
     }
 
     public void solve(int x, int y) {
-            if (inBounds(x, y)) {
-                if (maze.get(y).get(x).equals('M')) {
-                    found = true;
-                    return;
-                } else if (maze.get(y).get(x).equals('#') || maze.get(y).get(x).equals('0') || maze.get(y).get(x).equals('C')) {
-                    return;
-                }
-                maze.get(y).set(x, '0');
-                for (int x1 = x - 1; x1 < x + 2; x1++) {
-                    for (int y1 = y - 1; y1 < y + 2; y1++) {
-                        solve(x1, y1);
-                    }
-                }
-            }
-
+        if (!inBounds(x, y)) {
+            return;
+        } else if (maze.get(y).get(x).equals('#')) {
+            return;
+        } else if (maze.get(y).get(x).equals('M') && !found) {
+            found = true;
+            printResult(); // "End" the method, doesn't stop recursion
+            return;
+        } else if (maze.get(y).get(x).equals('0') || maze.get(y).get(x).equals('1') || maze.get(y).get(x).equals('C')) {
+            return;
+        }
+        maze.get(y).set(x, '0');
+        solve(x, y - 1); // has to start moving away from the cat, down first
+        solve(x - 1, y);
+        solve(x, y + 1);
+        solve(x + 1, y);
+        maze.get(y).set(x, '1');
     }
+
 
     public static void main(String[] args) throws IOException {
         CatNMouse cat = new CatNMouse();
         cat.readFile();
-        cat.solve(2, 1);
-        cat.printResult();
+        System.out.println(cat.toString());
+        cat.solve(cat.findCat(), 1);
+        if (!cat.getFound()) {
+            cat.printResult();
+        }
     }
 }
