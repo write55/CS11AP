@@ -1,10 +1,10 @@
-
 /*
 Aaron Wu
-
+Due: 4/25/19
+Reads a maze in the format of a text file
+Uses recursion to find a mouse on character "M" from a cat "C"
+Cat is always in first row
  */
-
-import S2.Senior;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,14 +15,15 @@ import java.util.ArrayList;
 public class CatNMouse {
 
     private ArrayList<ArrayList<Character>> maze;
-    private int w; // width
-    private int h; // height
+    private int w; // width, x
+    private int h; // height, y
     private boolean found = false;
 
     public CatNMouse() {
         maze = new ArrayList<ArrayList<Character>>();
     }
 
+    // FILE READING
     public void readFile() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter relative path of file: ");
@@ -47,7 +48,13 @@ public class CatNMouse {
         maze.add(temp);
     }
 
-    // Cat always in first row, returns column location
+    // GET FOUND
+    public boolean getFound() {
+        return found;
+    }
+
+    // FUNCTION METHODS
+    // Cat always at y = 0, gives x location
     public int findCat() {
         int out = 0;
         while (!maze.get(0).get(out).equals('C')) {
@@ -56,10 +63,7 @@ public class CatNMouse {
         return out;
     }
 
-    public boolean getFound() {
-        return found;
-    }
-
+    // Builds string from maze array for output
     public String toString() {
         StringBuilder out = new StringBuilder();
         for (ArrayList<Character> i : maze) {
@@ -75,22 +79,19 @@ public class CatNMouse {
         return out.toString();
     }
 
+    // Gives dimensions, result, calls toString
     public void printResult() {
         if (found) {
             System.out.println("The cat found the mouse in this " + w + " x " + h + " maze");
-            System.out.println(toString());
         } else {
             System.out.println("The cat was unable to find the mouse in this " + w + " x " + h + " maze");
         }
+        System.out.println(toString());
     }
 
-
-    public boolean inBounds(int x, int y) {
-        return x < w && x > -1 && y < h && y > -1;
-    }
-
+    // Solve method - give starting coordinates
     public void solve(int x, int y) {
-        if (!inBounds(x, y)) {
+        if (x >= w || x < 0 || y >= h || y < 0) {
             return;
         } else if (maze.get(y).get(x).equals('#')) {
             return;
@@ -102,13 +103,15 @@ public class CatNMouse {
             return;
         }
         maze.get(y).set(x, '0');
-        solve(x, y - 1); // has to start moving away from the cat, down first
-        solve(x - 1, y);
+        // These calls have to be vertical then horizontal for the set to 1 thing to work properly
         solve(x, y + 1);
         solve(x + 1, y);
+        solve(x, y - 1);
+        solve(x - 1, y);
+        // If the cat hits a wall or something meaning it's trapped the recursive call will return
+        // The space from the previous recurse will be set to 1 then printed as a space later
         maze.get(y).set(x, '1');
     }
-
 
     public static void main(String[] args) throws IOException {
         CatNMouse cnm;
