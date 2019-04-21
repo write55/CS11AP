@@ -4,6 +4,8 @@ Aaron Wu
 
  */
 
+import S2.Senior;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -109,12 +111,18 @@ public class CatNMouse {
 
 
     public static void main(String[] args) throws IOException {
-        CatNMouse cat = new CatNMouse();
-        cat.readFile();
-        System.out.println(cat.toString());
-        cat.solve(cat.findCat(), 1);
-        if (!cat.getFound()) {
-            cat.printResult();
+        CatNMouse cnm;
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        char sentinel = 'Y';
+        while (sentinel != 'N') {
+            cnm = new CatNMouse();
+            cnm.readFile();
+            cnm.solve(cnm.findCat(), 1);
+            if (!cnm.getFound()) {
+                cnm.printResult();
+            }
+            System.out.println("Continue? (Y/N)");
+            sentinel = in.readLine().toUpperCase().charAt(0);
         }
     }
 }
