@@ -103,7 +103,7 @@ public class CatNMouse {
             return;
         }
         maze.get(y).set(x, '0');
-        // These calls have to be vertical then horizontal for the set to 1 thing to work properly
+        // These calls have to be vertical then horizontal so the recursion doesn't just flip-flop
         solve(x, y + 1);
         solve(x + 1, y);
         solve(x, y - 1);
