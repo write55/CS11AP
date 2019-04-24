@@ -17,6 +17,7 @@ public class CatNMouse {
     private ArrayList<ArrayList<Character>> maze;
     private int w; // width, x
     private int h; // height, y
+    private int cat = 0; // Cat's x-coordinate
     private boolean found = false;
 
     public CatNMouse() {
@@ -48,23 +49,27 @@ public class CatNMouse {
         maze.add(temp);
     }
 
-    // GET FOUND
+    // GETTER/SETTER
     public boolean getFound() {
         return found;
     }
 
+    public int getCat() {
+        return cat;
+    }
+
     // FUNCTION METHODS
     // Cat always at y = 0, gives x location
-    public int findCat() {
-        int out = 0;
-        while (!maze.get(0).get(out).equals('C')) {
-            out++;
+    public void findCat() {
+        while (!maze.get(0).get(cat).equals('C')) {
+            cat++;
         }
-        return out;
+        maze.get(0).set(cat, ' ');
     }
 
     // Builds string from maze array for output
     public String toString() {
+        maze.get(0).set(cat, 'C');
         StringBuilder out = new StringBuilder();
         for (ArrayList<Character> i : maze) {
             for (Character j : i) {
@@ -103,11 +108,10 @@ public class CatNMouse {
             return;
         }
         maze.get(y).set(x, '0');
-        // These calls have to be vertical then horizontal so the recursion doesn't just flip-flop
         solve(x, y + 1);
-        solve(x + 1, y);
-        solve(x, y - 1);
         solve(x - 1, y);
+        solve(x, y - 1);
+        solve(x + 1, y);
         // If the cat hits a wall or something meaning it's trapped the recursive call will return
         // The space from the previous recurse will be set to 1 then printed as a space later
         maze.get(y).set(x, '1');
@@ -120,7 +124,8 @@ public class CatNMouse {
         while (sentinel != 'N') {
             cnm = new CatNMouse();
             cnm.readFile();
-            cnm.solve(cnm.findCat(), 1);
+            cnm.findCat();
+            cnm.solve(cnm.getCat(), 0);
             if (!cnm.getFound()) {
                 cnm.printResult();
             }
@@ -129,3 +134,222 @@ public class CatNMouse {
         }
     }
 }
+
+/*
+
+OUTPUT
+
+Enter relative path of file: maze1.txt
+
+Reading File...
+
+The cat found the mouse in this 40 x 20 maze
+##C#####################################
+##0        ######## ############       #
+##0         ####### #            ##### #
+##0################ ################## #
+##0#######00000000000000000      ##### #
+##0#######0###############0######000## #
+##0#######000000000M######0###0000#0 # #
+##0#####  ########## #####0###0## #0## #
+##0##### # ######0000#####00000## #0## #
+##0##### #######00##0##############00# #
+##0##### ####0000###0#########    ##0# #
+##00     ####0######0######### #####0# #
+###0       ##0######0######### ##0000# #
+###0#########0######000  ##### ##0#### #
+###0#########0########0## #### ##000000#
+###00000000000  ######0## #### #######0#
+######################0## #   ##0000000#
+######################0#########0##### #
+######################00000000000#     #
+########################################
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze2.txt
+
+Reading File...
+
+The cat found the mouse in this 7 x 7 maze
+####C
+####0##
+###M0
+00000
+000 0
+00000
+#######
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze3.txt
+
+Reading File...
+
+The cat found the mouse in this 10 x 10 maze
+########C#
+#     # 0#
+ ##### 00#
+#   0000##
+#   0#####
+#   000 ##
+######000
+#     00M#
+      00##
+###   00
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze4.txt
+
+Reading File...
+
+The cat was unable to find the mouse in this 11 x 8 maze
+#####C#####
+#
+#
+# #### ####
+  #  #    #
+# # M#    #
+# #  #    #
+# ########
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze5.txt
+
+Reading File...
+
+The cat found the mouse in this 8 x 8 maze
+M      C
+0      0
+00000000
+######00
+00000000
+00000000
+00000000
+######00
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze6.txt
+
+Reading File...
+
+The cat found the mouse in this 7 x 8 maze
+M     C
+0     0
+0000000
+#######
+
+
+
+#######
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze7.txt
+
+Reading File...
+
+The cat found the mouse in this 10 x 8 maze
+    C00
+    000
+    000
+    000
+    000
+    000M
+    0000
+    0000
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze8.txt
+
+Reading File...
+
+The cat found the mouse in this 10 x 6 maze
+#####C0000
+#########0
+#########0
+######0000
+0000000###
+M#########
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze9.txt
+
+Reading File...
+
+The cat found the mouse in this 13 x 3 maze
+####C0000M##
+    000000
+############
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze10.txt
+
+Reading File...
+
+The cat found the mouse in this 4 x 10 maze
+ C
+ 0
+ 0
+ 0
+ 0M
+ 00
+ 00
+ 00
+ 00
+ 00
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze11.txt
+
+Reading File...
+
+The cat was unable to find the mouse in this 10 x 8 maze
+###C######
+
+
+  #####
+  #   #
+  # M #
+  #   #
+  #####
+
+Continue? (Y/N)
+Y
+Enter relative path of file: maze12.txt
+
+Reading File...
+
+The cat found the mouse in this 40 x 20 maze
+##C#####################################
+##0        ######## ############       #
+##0         ####### #            ##### #
+##0################ ################## #
+##0#######00000000000000000      ##### #
+##0#######0###############0######000## #
+##0#######000000000M######0###0000#0 # #
+##0################# #####0###0## #0## #
+##0##### # ######0000#####00000## #0## #
+##0##### #######00##0##############00# #
+##0##### ####0000###0#########    ##0# #
+##00     ####0######0######### #####0# #
+###0       ##0######0######### ##0000# #
+###0#########0######000  ##### ##0#### #
+###0#########0########0## #### ##000000#
+###00000000000  ######0## #### #######0#
+######################0## #   ##0000000#
+######################0#########0##### #
+######################00000000000#     #
+########################################
+
+Continue? (Y/N)
+N
+
+ */
