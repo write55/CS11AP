@@ -18,7 +18,7 @@ public class A1 {
 	}
 
 	public static void main(String[] args) {
-		A1 frame = new A1(500, 500, 200);
+		A1 frame = new A1(500, 500, 175);
 		frame.init();
 	}
 }
