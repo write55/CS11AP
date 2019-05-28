@@ -8,54 +8,49 @@ public class A3 {
 	private JFrame frame;
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					A3 window = new A3();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		A3 window = new A3();
+		window.frame.setVisible(true);
 	}
 
 	public A3() {
 		frame = new JFrame();
-		frame.setSize(500,500);
+		frame.setSize(500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(new A31(500,500));
-
 		init();
 	}
 
 	public void init() {
+		color();
 		Random randNum = new Random();
-		JButton b1 = new JButton("1");
-		b1.addActionListener(new ActionListener() {
+		ActionListener play = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				youLose(randNum.nextInt(3));
 			}
-		});
-		b1.setBounds(10, 10, 46, 39);
+		};
+
+		JButton b1 = new JButton("1");
+		b1.addActionListener(play);
+		b1.setBounds(10, 10, 100, 50);
 		frame.getContentPane().add(b1);
+
+		JButton b2 = new JButton("2");
+		b2.addActionListener(play);
+		b2.setBounds(155, 10, 100, 50);
+		frame.getContentPane().add(b2);
+
+		JButton b3 = new JButton("3");
+		b3.addActionListener(play);
+		b3.setBounds(300, 10, 100, 50);
+		frame.getContentPane().add(b3);
 	}
 
 	public void youLose(int in) {
 		if (in == 0) {
 			System.exit(0);
 		} else {
+			color();
 		}
-	}
-
-}
-
-class A31 extends JPanel {
-
-	public A31(int x, int y) {
-		setPreferredSize(new Dimension(x, y));
-		setBackground(Color.WHITE);
 	}
 
 	public void color() {
@@ -63,12 +58,7 @@ class A31 extends JPanel {
 		float r = randNum.nextFloat();
 		float g = randNum.nextFloat();
 		float b = randNum.nextFloat();
-		setBackground(new Color(r, g, b));
+		frame.getContentPane().setBackground(new Color(r, g, b));
 	}
 
-	public void paintComponent(Graphics gr) {
-		int width = getWidth();
-		int height = getHeight();
-		super.paintComponent(gr);
-	}
 }
