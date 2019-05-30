@@ -1,8 +1,8 @@
 package S1;
 // Aaron Wu
 // 9/12/18
-// Program to take ISBN Number and calculate a check digit for comparison with given check digit
-// This is the Fancy version with limited console input, a quicker algorithm, and a thing that says if the check digits are the same
+// Program to take ISBN Number and calculate a check1 digit for comparison with given check1 digit
+// This is the Fancy version with limited console input, a quicker algorithm, and a thing that says if the check1 digits are the same
 
 import java.util.Scanner;
 

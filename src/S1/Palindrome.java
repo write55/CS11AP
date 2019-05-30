@@ -2,7 +2,7 @@ package S1;
 /*
 Aaron Wu
 11/7/18
-Program to take user input for a string and check if it's a palindrome, loops until the user enters 0
+Program to take user input for a string and check1 if it's a palindrome, loops until the user enters 0
  */
 
 import java.io.BufferedReader;

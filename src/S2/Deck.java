@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * The S2.Deck class represents a shuffled deck of cards. It provides several
- * operations including initialize, shuffle, deal, and check if empty.
+ * operations including initialize, shuffle, deal, and check1 if empty.
  */
 public class Deck {
 

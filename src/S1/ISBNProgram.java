@@ -1,7 +1,7 @@
 package S1;
 // Aaron Wu
 // 9/12/18
-// Program to take ISBN Number and calculate a check digit for comparison with given check digit
+// Program to take ISBN Number and calculate a check1 digit for comparison with given check1 digit
 
 public class ISBNProgram {
     public static void main(String[] args) {

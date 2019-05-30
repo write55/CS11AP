@@ -125,7 +125,7 @@ public class Home {
         return totalArea;
     }
 
-    // Method to check if budget is greater than cost and print out if it's enough
+    // Method to check1 if budget is greater than cost and print out if it's enough
     public static void checkCost(int cost, int budget) {
         if (cost > budget) {
             System.out.println("Budget is not enough.");
