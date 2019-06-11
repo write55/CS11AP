@@ -43,7 +43,6 @@ public class A7 extends JFrame implements ChangeListener {
         }
         textA.setEditable(false);
 
-
         sliderB = new JSlider(JSlider.VERTICAL, 35, 45, 40);
         sliderB.setMajorTickSpacing(1);
         sliderB.setPaintTicks(true);
